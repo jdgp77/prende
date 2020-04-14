@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - ./db/dump:/docker-entrypoint-initdb.d
+      - ./db/datalib:/var/lib/mysql
+    env_file:
+      - ./docker.env
+    ports:
+      - "23306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+  drupal:
+    image: jdgp77/drupalcamp:v1.0.0
+    volumes:
+      - ./drupal:/var/www/html
+    env_file:
+      - ./docker.env
+    ports:
+      - "20080:80"
+      - "20022:22"
+    working_dir: /var/www/html
+    tty: true
+    command: apachectl -D FOREGROUND
+  pma:
+    image: phpmyadmin/phpmyadmin:edge
+    env_file:
+      - ./docker.env
+    ports:
+     - "28080:80"
+  gatsby:
+    build: .
+    working_dir: /app
+    volumes:
+      - ./gatsby:/app
+    ports:
+     - "28000:28000"
+    tty: true

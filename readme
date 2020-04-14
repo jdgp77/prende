@@ -1,0 +1,48 @@
+Pasos para arrancar con la pagina de DrupalCamp - Colombia:
+
+En Mac/Linux
+============
+
+Solo la primera vez
+-------------------
+1. Ejecuta el comando siempre antes de iniciar cualquier cosa, ya que inicia todos los contenedores de docker
+sh prende.sh start
+2. Sin cerrar la terminal que ejecuta el comando anterior, ejecuta en otra ventana
+sh prende.sh install
+3. Inicia react con
+sh prende.sh react-web start-local
+
+
+1. Instalar Docker
+2. (Abres una terminal) Ejecutar "sh script--start-docker.sh".
+3. (Sin cerrar la terminal anterio abres una nueva y en ella) Ejecutar "sh script--install.sh" (Espera un buen tiempo).
+4. Cierras las dos terminales
+
+Para arrancar
+-------------
+Una vez ya esta instalado todo las siguientes oportunidades solo tienes que ejecutar en DOS terminales
+1. (Terminal 1) Ejecutar "sh prende.sh start"
+2. (Terminal 2) Sin cerrar la terminal anterior Ejecutar "sh prende.sh install".
+
+Despues de esto estas seran las rutas de trabajo:
+- Contenta:
+localhost:20080
+- MySQL:
+localhost:23306
+- PHPMyAdmin:
+localhost:28080
+- Gatsby:
+localhost:23000
+
+Conectarnos a la Base de datos
+==============================
+Si bien podemos conectarnos a la base de datos desde phpmyadmin, si se requiere conectar de forma externa se puede hacer al puerto 13306 con usuario: root y password: root
+
+
+El gatsby se isntalo basado en:
+https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/
+https://www.contentacms.org/
+https://drupal-graphql.gitbook.io/graphql/queries/querying-nodes
+IMPIRTATE
+https://www.lullabot.com/articles/decoupled-drupal-getting-started-gatsby-and-jsonapi
+Con el comando: npm install --save gatsby
