@@ -1,0 +1,8 @@
+@import "../../../../local-sass/colors.scss";
+
+.secton-footer-buttom {
+  background-color: $footerButtomBackground;
+  min-height: 50px;
+  text-align: center;
+  color: $footerButtomText;
+}

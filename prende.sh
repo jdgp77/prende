@@ -49,12 +49,15 @@ then
   fi
   if [ "$2" = "create-project" ]
   then
-    echo "\$sites['${4}'] = '${4}';" >> drupal/web/sites/sites.php
-    mkdir drupal/web/sites/${4}
-    cp -r drupal/web/sites/default/files drupal/web/sites/${4}/files
-    cp -r drupal/web/sites/default/services.yml drupal/web/sites/${4}/services.yml
-    cp -r drupal/web/sites/default/settings.php drupal/web/sites/${4}/settings.php
-    cp db/dump/dump.sql db/dump/${4}.sql
+    echo "\$sites['${3}'] = '${3}';" >> drupal/web/sites/sites.php
+    echo "\$sites[local.'${3}'] = '${3}';" >> drupal/web/sites/sites.php
+    mkdir drupal/web/sites/${3}
+    cp -r drupal/web/sites/default/files drupal/web/sites/${3}/files
+    mkdir -p drupal/web/sites/${3}/files/modules
+    mkdir -p drupal/web/sites/${3}/files/themes
+    cp -r drupal/web/sites/default/services.yml drupal/web/sites/${3}/services.yml
+    cp -r drupal/web/sites/default/settings.php drupal/web/sites/${3}/settings.php
+    cp db/dump/dump.sql db/dump/${3}.sql
 
     
    fi
@@ -238,6 +241,12 @@ then
     #rm -rf public
     cd ..
   fi
+fi
+
+if [ "$1" = "create-project" ]
+then
+  sh prende.sh drupal create-project $2
+  sh prende.sh gatsby create-project $2
 fi
 
 if [ "$1" = "start" ]
