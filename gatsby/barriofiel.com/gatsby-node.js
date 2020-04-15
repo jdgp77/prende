@@ -11,7 +11,7 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
 
-  let url = `http://back.barriofiel.jdgp77.com/jsonapi/node/page`;
+  let url = `https://back.barriofiel.jdgp77.com/jsonapi/node/page`;
 
   let result;
   try {
