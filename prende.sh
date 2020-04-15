@@ -162,10 +162,10 @@ then
       sh $PRENDE_NAMEFILE
       rm $PRENDE_NAMEFILE
     fi
-    if [ "$2" = "build" ]
+    if [ "$3" = "build" ]
     then
       sh prende.sh gatsby-web ${2} command npm run-script build
-      sh prende.sh gatsby-web ${2} command mv build $3
+      #sh prende.sh gatsby-web ${2} command mv build $3
     fi
     if [ "$2" = "-h" ] || [ "$2" = "--help" ]
     then
@@ -236,9 +236,12 @@ then
   if [ "$2" = "deploy" ]
   then
     cd firebase
-    cp -r "../react-web/${3}" public
+    cp .firebaserc_org .firebaserc
+    sed -i "s/eduintgd/${4}/g" .firebaserc
+    cp -r "../gatsby/${3}/build" public
     firebase deploy
-    #rm -rf public
+    rm .firebaserc
+    rm -rf public
     cd ..
   fi
 fi
@@ -273,12 +276,12 @@ then
   echo "  prende install                           [Para instalar la plataforma]"
   echo ""
   echo "  prende drupal composer <comandos>               [Ejecuta comandos de composer]"
-  echo "  prende drupal drush <comandos>                  [Ejecuta comandos de composer]"
+  echo "  prende drupal drush <comandos>                        [Ejecuta comandos de composer]"
   echo ""
-  echo "  prende drupal install:with-mysql             [Instala drupal con base de datos]"
+  echo "  prende drupal install:with-mysql                             [Instala drupal con base de datos]"
   echo ""
-  echo "  prende react-web build <nombrecarpeta>   [Realiza el build pero en la carpeta nombrecarpeta]";
-  echo "  prende firebase deploy <nombrecarpeta>   [Sube a firebase el deploy nombrecarpeta]"
+  echo "  prende gatsbt build <nombrecarpeta>                          [Realiza el build pero en la carpeta nombrecarpeta]";
+  echo "  prende firebase deploy <nombrecarpeta> <proyecto-firebase>   [Sube a firebase el deploy nombrecarpeta]"
   echo ""
   echo ""
   echo "  Ejemplos:"
