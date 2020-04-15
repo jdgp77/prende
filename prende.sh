@@ -110,7 +110,7 @@ then
     echo "prende react-web start              [Para iniciar react en el puerto 23000]"
   fi
 fi
-
+echo "a01"
 if [ "$1" = "gatsby" ]
 then
   if [ "$2" = "create-project" ]
@@ -125,12 +125,13 @@ then
   fi
   if [ "$2" = "update-project" ]
   then
-    rm -r gatsby/$3/public/global-images
-    cp -r gatsby/eduint/public/global-images gatsby/$3/public/global-images
-    rm -r gatsby/$3/src/global-components
-    cp -r gatsby/eduint/src/global-components gatsby/$3/src/global-components
-    rm -r gatsby/$3/src/global-sass
-    cp -r gatsby/eduint/src/global-sass gatsby/$3/src/global-sass
+  echo "a02"
+    rm -rf gatsby/$3/public/global-images
+    ln -s ../../eduint/public/global-images gatsby/$3/public/global-images
+    rm -rf gatsby/$3/src/global-components
+    ln -s ../../eduint/src/global-components gatsby/$3/src/global-components
+    rm -rf gatsby/$3/src/global-sass
+    ln -s ../../eduint/src/global-sass gatsby/$3/src/global-sass
   else
     if [ "$3" = "bash" ]
     then
