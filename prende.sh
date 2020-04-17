@@ -90,11 +90,11 @@ then
   else
     if [ "$3" = "bash" ]
     then
-      sh gatsby/${2}/prende-scripts/bash.sh ${2}
+      sh gatsby/prende-scripts/bash.sh ${2}
     fi 
     if [ "$3" = "start" ]
     then
-      sh gatsby/${2}/prende-scripts/start.sh ${2}
+      sh gatsby/prende-scripts/start.sh ${2}
     fi
     if [ "$3" = "install" ]
     then
@@ -107,21 +107,19 @@ then
     fi
     if [ "$3" = "command" ]
     then
-      PRENDE_BASESCRIPT="docker exec -it prende_gatsby_1 $4 $5 $6 $7 $8 $9"
       PRENDE_NUMFILE=$(($(od -An -N1 -i /dev/random) % 100))
       PRENDE_NAMEFILE="personalscript-${PRENDE_NUMFILE}.sh"
-      echo "#!/bin/bash" > $PRENDE_NAMEFILE
-      echo "#cd ${2}" > $PRENDE_NAMEFILE
-      echo $PRENDE_BASESCRIPT >> $PRENDE_NAMEFILE
-      echo "#cd .." >> $PRENDE_NAMEFILE
-      chmod +x $PRENDE_NAMEFILE
-      sh $PRENDE_NAMEFILE
+      echo "#!/bin/bash" > "gatsby/$PRENDE_NAMEFILE"
+      echo "cd ${2}" >> "gatsby/$PRENDE_NAMEFILE"
+      echo "$4 $5 $6 $7 $8 $9" >> "gatsby/$PRENDE_NAMEFILE"
+      echo "cd .." >> "gatsby/$PRENDE_NAMEFILE"
+      docker exec -it prende_gatsby_1 sh $PRENDE_NAMEFILE
       rm $PRENDE_NAMEFILE
     fi
     if [ "$3" = "build" ]
     then
       sh prende.sh gatsby-web ${2} command npm run-script build
-      #sh prende.sh gatsby-web ${2} command mv build $3
+      sh prende.sh gatsby-web ${2} command mv build $3
     fi
     if [ "$2" = "-h" ] || [ "$2" = "--help" ]
     then
