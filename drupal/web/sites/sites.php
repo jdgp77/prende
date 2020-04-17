@@ -55,6 +55,8 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
+
+$sites['back.educacioninteractiva.com.co'] = 'eduint';
 $sites['eduint'] = 'eduint';
 $sites['local.educacioninteractiva.com'] = 'eduint';
 $sites['barriofiel.com'] = 'barriofiel.com';
