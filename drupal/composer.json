@@ -28,7 +28,8 @@
     "drupal/rest_menu_tree": "^1.2",
     "drupal/core-recommended": "^8.8",
     "drupal/smtp": "^1.0",
-    "drupal/graphql": "^3.0"
+    "drupal/graphql": "^3.0",
+    "drupal/simple_oauth": "^4.4"
   },
   "require-dev": {
     "drupal/console": "^1.0.2",

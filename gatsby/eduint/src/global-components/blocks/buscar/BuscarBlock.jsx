@@ -7,8 +7,6 @@ import List from '../../structure/lists/list/List';
 class BuscarBlock extends Component {
   constructor() {
     super();
-    
-    
   }
   
   componentDidMount() {

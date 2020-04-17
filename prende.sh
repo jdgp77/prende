@@ -1,10 +1,13 @@
 #!/bin/bash
 if [ "$1" = "drupal" ]
 then
+  echo "Go Drupal"
   if [ "$2" = "composer" ]
   then
+    echo "Go Composer"
     if [ "$3" = "require" ]
     then
+      echo "Go require"
       PRENDE_BASESCRIPT="docker exec -it --user drupaluser prende_drupal_1 composer require '${4}' $5 $6 $7 $8 $9"
       PRENDE_NUMFILE=$(($(od -An -N1 -i /dev/random) % 100))
       PRENDE_NAMEFILE="personalscript-${PRENDE_NUMFILE}.sh"
@@ -14,17 +17,12 @@ then
       sh $PRENDE_NAMEFILE
       rm $PRENDE_NAMEFILE
     else
-      sh prende.sh drupal command $2 $3 $4 $5 $6 $7 $8 $9
+      echo "Go command"
+      sh prende.sh drupal command $2 $3 $4 $5 $6 $7 $8 $9 
     fi
-  fi
-  
-  if [ "$2" = "drush" ]
+  elif [ "$2" = "command" ] 
   then
-    echo "$2"
-    sh prende.sh drupal command $2 $3 $4 $5 $6 $7 $8 $9
-  fi
-  if [ "$2" = "command" ]
-  then
+    echo "Go Command"
     echo "docker exec -it --user drupaluser prende_drupal_1 $3 $4 $5 $6 $7 $8 $9"
     PRENDE_BASESCRIPT="docker exec -it --user drupaluser prende_drupal_1 $3 $4 $5 $6 $7 $8 $9"
     PRENDE_NUMFILE=$(($(od -An -N1 -i /dev/random) % 100))
@@ -33,21 +31,17 @@ then
     echo $PRENDE_BASESCRIPT >> $PRENDE_NAMEFILE
     chmod +x $PRENDE_NAMEFILE
     sh $PRENDE_NAMEFILE
-    rm $PRENDE_NAMEFILE
-  fi
-  if [ "$2" = "install:with-mysql" ]
+    #rm $PRENDE_NAMEFILE
+  elif [ "$2" = "install:with-mysql" ]
   then
     sh prende.sh drupal composer run-script install:with-mysql
-  fi
-  if [ "$2" = "bash" ]
+  elif [ "$2" = "bash" ]
   then
     sh drupal/prende-scripts/bash.sh
-  fi
-  if [ "$2" = "install" ]
+  elif [ "$2" = "install" ]
   then
     sh drupal/prende-scripts/install.sh
-  fi
-  if [ "$2" = "create-project" ]
+  elif [ "$2" = "create-project" ]
   then
     echo "\$sites['${3}'] = '${3}';" >> drupal/web/sites/sites.php
     echo "\$sites[local.'${3}'] = '${3}';" >> drupal/web/sites/sites.php
@@ -58,58 +52,21 @@ then
     cp -r drupal/web/sites/default/services.yml drupal/web/sites/${3}/services.yml
     cp -r drupal/web/sites/default/settings.php drupal/web/sites/${3}/settings.php
     cp db/dump/dump.sql db/dump/${3}.sql
+  else
+    echo "a03"
+    if [ "$3" = "drush" ]
+    then
+      echo "a04"
+      sh prende.sh drupal command drush --uri=$2 $4 $5 $6 $7 $8 $9
+    fi
+  fi
 
-    
-   fi
-
-  if [ "$2" = "-h" ] || [ "$2" = "--help" ]
+  if [ "$3" = "-h" ] || [ "$3" = "--help" ]
   then
     echo "prende drupal create-project <nombre-proyecto> [ERROR FALTA PROBAR]  [Entrar a la consola de este proyecto]"
   fi
 fi
 
-if [ "$1" = "react-web" ]
-then
-  if [ "$2" = "bash" ]
-  then
-    sh react-web/prende-scripts/bash.sh
-  fi 
-  if [ "$2" = "start" ]
-  then
-    sh react-web/prende-scripts/start.sh
-  fi
-  if [ "$2" = "install" ]
-  then
-    sh prende.sh react-web command npm install
-    sh prende.sh react-web command mv build $3docker
-  fi
-  if [ "$2" = "start-local" ]
-  then
-    sh react-web/prende-scripts/start-local.sh
-  fi
-  if [ "$2" = "command" ]
-  then
-    PRENDE_BASESCRIPT="docker exec -it prende_react_1 $3 $4 $5 $6 $7 $8 $9"
-    PRENDE_NUMFILE=$(($(od -An -N1 -i /dev/random) % 100))
-    PRENDE_NAMEFILE="personalscript-${PRENDE_NUMFILE}.sh"
-    echo "#!/bin/bash" > $PRENDE_NAMEFILE
-    echo $PRENDE_BASESCRIPT >> $PRENDE_NAMEFILE
-    chmod +x $PRENDE_NAMEFILE
-    sh $PRENDE_NAMEFILE
-    rm $PRENDE_NAMEFILE
-  fi
-  if [ "$2" = "build" ]
-  then
-    sh prende.sh react-web command npm run-script build
-    sh prende.sh react-web command mv build $3
-  fi
-
-  if [ "$2" = "-h" ] || [ "$2" = "--help" ]
-  then
-    echo "prende start                        [Para iniciar el docker con MySQL, Drupal y react]"
-    echo "prende react-web start              [Para iniciar react en el puerto 23000]"
-  fi
-fi
 if [ "$1" = "gatsby" ]
 then
   if [ "$2" = "create-project" ]
@@ -124,7 +81,6 @@ then
   fi
   if [ "$2" = "update-project" ]
   then
-    echo "a03"
     rm -rf gatsby/$3/public/global-images
     cp -r gatsby/eduint/public/global-images gatsby/$3/public/global-images
     rm -rf gatsby/$3/src/global-components
@@ -178,49 +134,6 @@ then
       echo "prende gatsby <nombre-proyecto> build [ERROR FALTA]           [Genera el Build para gatsby]"
     fi
   fi 
-fi
-
-if [ "$1" = "gatsby-web" ]
-then
-  if [ "$2" = "bash" ]
-  then
-    sh gatsby-web/prende-scripts/bash.sh
-  fi 
-  if [ "$2" = "start" ]
-  then
-    sh gatsby-web/prende-scripts/start.sh
-  fi
-  if [ "$2" = "install" ]
-  then
-    sh prende.sh gatsby-web command npm install
-    sh prende.sh gatsby-web command mv build $3docker
-  fi
-  if [ "$2" = "start-local" ]
-  then
-    sh gatsby-web/prende-scripts/start-local.sh
-  fi
-  if [ "$2" = "command" ]
-  then
-    PRENDE_BASESCRIPT="docker exec -it prende_gatsby_1 $3 $4 $5 $6 $7 $8 $9"
-    PRENDE_NUMFILE=$(($(od -An -N1 -i /dev/random) % 100))
-    PRENDE_NAMEFILE="personalscript-${PRENDE_NUMFILE}.sh"
-    echo "#!/bin/bash" > $PRENDE_NAMEFILE
-    echo $PRENDE_BASESCRIPT >> $PRENDE_NAMEFILE
-    chmod +x $PRENDE_NAMEFILE
-    sh $PRENDE_NAMEFILE
-    rm $PRENDE_NAMEFILE
-  fi
-  if [ "$2" = "build" ]
-  then
-    sh prende.sh gatsby-web command npm run-script build
-    sh prende.sh gatsby-web command mv build $3
-  fi
-  
-  if [ "$2" = "-h" ] || [ "$2" = "--help" ]
-  then
-    echo "prende start                        [Para iniciar el docker con MySQL, Drupal y react]"
-    echo "prende react-web start              [Para iniciar react en el puerto 23000]"
-  fi
 fi
 
 if [ "$1" = "db" ]

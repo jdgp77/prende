@@ -2,5 +2,3 @@
 *
 # Except this file
 !.gitignore
-!global-images/*
-!local-images/*

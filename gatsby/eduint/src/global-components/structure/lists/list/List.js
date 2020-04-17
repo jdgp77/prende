@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './List.scss';
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ImageElement from '../../../elements/image/ImageElement';
 
