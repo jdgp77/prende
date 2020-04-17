@@ -59,5 +59,7 @@
 $sites['back.educacioninteractiva.com.co'] = 'eduint';
 $sites['eduint'] = 'eduint';
 $sites['local.educacioninteractiva.com'] = 'eduint';
+
+$sites['back.barriofiel.jdgp77.com'] = 'barriofiel.com';
 $sites['barriofiel.com'] = 'barriofiel.com';
 $sites['local.barriofiel.com'] = 'barriofiel.com';
