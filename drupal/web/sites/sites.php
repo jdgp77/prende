@@ -56,6 +56,7 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
+$sites['drupal'] = 'eduint';
 $sites['back.educacioninteractiva.com.co'] = 'eduint';
 $sites['eduint'] = 'eduint';
 $sites['local.educacioninteractiva.com'] = 'eduint';
