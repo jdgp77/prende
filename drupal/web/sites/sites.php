@@ -57,6 +57,7 @@
  */
 
 $sites['drupal'] = 'eduint';
+
 $sites['back.educacioninteractiva.com.co'] = 'eduint';
 $sites['eduint'] = 'eduint';
 $sites['local.educacioninteractiva.com'] = 'eduint';

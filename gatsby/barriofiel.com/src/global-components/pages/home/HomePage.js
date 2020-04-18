@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HomePage.scss';
 import Grid from '@material-ui/core/Grid';
+import { graphql } from 'gatsby';
 
 class HomePage extends Component {
   
