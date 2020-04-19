@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import PasswordElement from '../../../global-components/elements/form/password/PasswordElement';
 import Button from '@material-ui/core/Button';
 import TitleElement from '../../../global-components/elements/title/TitleElement';
+import Grid from '@material-ui/core/Grid';
 
 class Login extends Component {
   constructor() {
@@ -21,9 +22,14 @@ class Login extends Component {
           Iniciar sesión
         </Button>
       </form>
-      <div><Link to="/recuperar-contrasena" className="link">¿Olvidaste la contraseña?</Link></div>
-      <div>¿No tienes cuenta?,<br/><Link to="/registro" className="link"> Registrate acá</Link></div>
-      
+      <Grid container spacing={3}>
+        <Grid item xs={6} className="link">
+          <Link to="/recuperar-contrasena" >¿Olvidaste la contraseña?</Link>
+        </Grid>
+        <Grid item xs={6} className="link right">
+        ¿No tienes cuenta?,<br/><Link to="/registro"> Registrate acá</Link>
+        </Grid>
+      </Grid>
     </div>
   }
 }

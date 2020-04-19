@@ -14,7 +14,7 @@ class Register extends Component {
     return <div className="block create-store" >
       <form>
         <TitleElement type="h1" >Crear tienda</TitleElement>
-        <div class="paragraph">Entre mas datos llenes mas probable es que te vean.</div>
+        <div class="text-small center">Entre mas datos llenes mas probable es que te vean.</div>
         <TextField label="Nombre Tienda" /><br/>
         <TextField label="Descripción" /><br/>
         <TextField label="Descripción Corta" /><br/>
@@ -23,7 +23,9 @@ class Register extends Component {
         <TextField label="Whatsapp" /><br/>
         <TextField label="Direccion" /><br/>
         <TextField label="Telefono fijo/Celular sin whatsapp" /><br/>
-        <div class="paragraph">Acepto <Link to="/terminos" className="link">terminos y condiciones</Link></div>
+        <div class="text">Tu tienda esta abierta en cuarentena.</div>
+        <div class="text">Radio si/no.</div>
+        <div class="text center">Acepto <Link to="/terminos" className="link">terminos y condiciones</Link></div>
         <Button className="send" variant="contained" color="primary">
           Crear
         </Button>

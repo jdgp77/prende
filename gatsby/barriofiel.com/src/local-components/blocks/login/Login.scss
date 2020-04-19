@@ -11,8 +11,23 @@
   input {
     width: 100%;
   }
+  a {
+    font-size: 14px;
+    color: #555555;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   .send {
     display: block;
     margin: 40px auto;
+  }
+  .link {
+    font-size: 14px;
+    color: #555555;
+  }
+  .right {
+    text-align: right;
   }
 }
