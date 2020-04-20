@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import './ButtonElement.scss';
 
 class ButtonElement extends Component {
   render() {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "gatsby";
 import './Createstore.scss';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
+import Button from '../../elements/form/button/ButtonElement';
 import TitleElement from '../../../global-components/elements/title/TitleElement';
 
 class Register extends Component {
