@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 //import Button from '@material-ui/core/Button';
 import Button from '../../elements/form/button/ButtonElement';
 import TitleElement from '../../../global-components/elements/title/TitleElement';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 class Register extends Component {
   constructor() {
@@ -24,8 +26,14 @@ class Register extends Component {
         <TextField label="Whatsapp" /><br/>
         <TextField label="Direccion" /><br/>
         <TextField label="Telefono fijo/Celular sin whatsapp" /><br/>
-        <div class="text">Tu tienda esta abierta en cuarentena.</div>
-        <div class="text">Radio si/no.</div>
+        <FormControlLabel
+          value="yes"
+          control={<Switch color="primary" />}
+          label="¿Tu tienda esta abierta en cuarentena?"
+          labelPlacement="top"
+          name="checkedOpenCuarentine"
+          color="primary"
+        />
         <div class="text center">Acepto <Link to="/terminos" className="link">terminos y condiciones</Link></div>
         <Button className="send" variant="contained" color="primary">
           Crear
