@@ -8,6 +8,7 @@ class ButtonElement extends Component {
     if (this.props.className) inputProps['className'] = this.props.className;
     if (this.props.variant) inputProps['variant'] = this.props.className;
     if (this.props.color) inputProps['color'] = this.props.color;
+    if (this.props.onClick) inputProps['onClick'] = this.props.onClick;
 
     return  <Button {...inputProps} >
       {this.props.children}

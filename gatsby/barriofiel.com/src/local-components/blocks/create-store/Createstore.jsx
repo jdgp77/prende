@@ -7,10 +7,63 @@ import Button from '../../elements/form/button/ButtonElement';
 import TitleElement from '../../../global-components/elements/title/TitleElement';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 class Register extends Component {
   constructor() {
     super();
+    this.state = {
+      count_whatsapp : 1,
+      count_address : 1,
+      count_telephone : 1,
+    }
+  }
+
+  addNumberWhatsApp = () => {
+    let newCountWhatsApp = this.state.count_whatsapp + 1;
+    this.setState({
+      count_whatsapp : newCountWhatsApp,
+    })
+  }
+
+  addNumberAddress = () => {
+    debugger;
+    let newCountAddress = this.state.count_address + 1;
+    this.setState({
+      count_address : newCountAddress
+    })
+  }
+
+  addNumberTelephone = () => {
+    debugger;
+    let newCountTelephone = this.state.count_telephone + 1;
+    this.setState({
+      count_telephone : newCountTelephone
+    })
+  }
+
+  getWhatsApp = (count_whatsapp) => {
+    let arrayWhatsApp = [];
+    for (let index = 0; index < count_whatsapp; index++) {
+      arrayWhatsApp[arrayWhatsApp.length] = <TextField label="Whatsapp" />;
+    }
+    return arrayWhatsApp
+  }
+
+  getAddress = (count_address) => {
+    let arrayAddress = [];
+    for (let index = 0; index < count_address; index++) {
+      arrayAddress[arrayAddress.length] = <TextField label="Direccion" />;
+    }
+    return arrayAddress
+  }
+
+  getTelephones = (count_telephone) => {
+    let arrayTelephones = [];
+    for (let index = 0; index < count_telephone; index++) {
+      arrayTelephones[arrayTelephones.length] = <TextField label="Telefono fijo/Celular sin whatsapp" />;
+    }
+    return arrayTelephones
   }
 
   render() {
@@ -23,9 +76,12 @@ class Register extends Component {
         <TextField label="Descripción Corta" /><br/>
         <TextField label="Subir foto" /><br/>
         <TextField label="(Opcional) Subir logo de la tienda" /><br/>
-        <TextField label="Whatsapp" /><br/>
-        <TextField label="Direccion" /><br/>
-        <TextField label="Telefono fijo/Celular sin whatsapp" /><br/>
+        { this.getWhatsApp(this.state.count_whatsapp) }
+        <AddCircleIcon id="iconWhatsapp" name="iconWhatsapp" onClick={this.addNumberWhatsApp}></AddCircleIcon>
+        { this.getAddress(this.state.count_whatsapp) }
+        <AddCircleIcon id="iconAddress" name="iconAddress" onClick={this.addNumberAddress}></AddCircleIcon>
+        { this.getTelephones(this.state.count_whatsapp) }
+        <AddCircleIcon id="iconTelephone" name="iconTelephone" onClick={this.addNumberTelephone}></AddCircleIcon>
         <FormControlLabel
           value="yes"
           control={<Switch color="primary" />}
