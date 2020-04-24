@@ -22,22 +22,23 @@ class Register extends Component {
   addNumberWhatsApp = () => {
     let newCountWhatsApp = this.state.count_whatsapp + 1;
     this.setState({
+      //...this.state,
       count_whatsapp : newCountWhatsApp,
     })
   }
 
   addNumberAddress = () => {
-    debugger;
     let newCountAddress = this.state.count_address + 1;
     this.setState({
+      //...this.state,
       count_address : newCountAddress
     })
   }
 
   addNumberTelephone = () => {
-    debugger;
     let newCountTelephone = this.state.count_telephone + 1;
     this.setState({
+      //...this.state,
       count_telephone : newCountTelephone
     })
   }
@@ -67,6 +68,7 @@ class Register extends Component {
   }
 
   render() {
+    console.log(this.state)
     return <div className="block create-store" >
       <form>
         <TitleElement type="h1" >Crear tienda</TitleElement>
@@ -78,9 +80,9 @@ class Register extends Component {
         <TextField label="(Opcional) Subir logo de la tienda" /><br/>
         { this.getWhatsApp(this.state.count_whatsapp) }
         <AddCircleIcon id="iconWhatsapp" name="iconWhatsapp" onClick={this.addNumberWhatsApp}></AddCircleIcon>
-        { this.getAddress(this.state.count_whatsapp) }
+        { this.getAddress(this.state.count_address) }
         <AddCircleIcon id="iconAddress" name="iconAddress" onClick={this.addNumberAddress}></AddCircleIcon>
-        { this.getTelephones(this.state.count_whatsapp) }
+        { this.getTelephones(this.state.count_telephone) }
         <AddCircleIcon id="iconTelephone" name="iconTelephone" onClick={this.addNumberTelephone}></AddCircleIcon>
         <FormControlLabel
           value="yes"
