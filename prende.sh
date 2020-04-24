@@ -87,6 +87,8 @@ then
     cp -r gatsby/eduint/src/global-components gatsby/$3/src/global-components
     rm -rf gatsby/$3/src/global-sass
     cp -r gatsby/eduint/src/global-sass gatsby/$3/src/global-sass
+    rm -rf gatsby/$3/src/global-services
+    cp -r gatsby/eduint/src/global-services gatsby/$3/src/global-services
   else
     if [ "$3" = "bash" ]
     then

@@ -60,7 +60,7 @@ class List extends Component {
 				ourClass = "list col s12 l" + (12/numCols);
 		}
 
-		let listItems = lists.map((item) => {
+		let listItems = lists.map((item, index) => {
 			let url = '';
 			let target = '';
 			if (item.link) {
@@ -75,7 +75,7 @@ class List extends Component {
 			var getItemStructure = () => {
 				switch(type) {
 					case 'items':
-						return (<Paper className="item" elevation={0}>
+						return (<Paper key={index} className="item" elevation={0}>
 								<div className="itemcard items">
 									<a target={target} href={url} >
 										<ImageElement src={item.image ? item.image : ''}></ImageElement>
@@ -91,7 +91,7 @@ class List extends Component {
 								</div>
 							</Paper>);
 					case 'media':
-						return (<div className={ourClass}>
+						return (<div key={index} className={ourClass}>
 								<div className="itemcard media">
 									<div className="image">
 			
@@ -103,7 +103,7 @@ class List extends Component {
 								</div>
 							</div>);
 					case 'card':
-						 return (<div className={ourClass}>
+						 return (<div key={index} className={ourClass}>
 							 <div className="itemcard card">
 								 <div className="image">
 		 

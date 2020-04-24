@@ -1,3 +1,5 @@
+const path =  require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Educación Interactiva G.D. S.A.S.`,
@@ -11,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: path.join(__dirname, 'src', 'images'),
       },
     },
     `gatsby-transformer-json`,
@@ -21,8 +23,8 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Para transformación de imagenes
+    `gatsby-plugin-sharp`, // Para transformación de imagenes
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
