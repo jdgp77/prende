@@ -10,6 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 // import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const useStyles = makeStyles((theme) => ({
@@ -62,8 +63,8 @@ export default function TiendaDetalle() {
                         <Typography className="text"><span>WhatsApp:</span> 3015407389</Typography>
                       </ListItem>
                       <ListItem >
-                        <ListItemIcon className="icon-what"> <WhatsAppIcon /> </ListItemIcon>
-                        <Typography className="text"><span>WhatsApp:</span> 3015407389</Typography>
+                        <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
+                        <Typography className="text"><span>Telefono:</span> 8405083</Typography>
                       </ListItem>
                       <ListItem >
                         <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
@@ -78,7 +79,7 @@ export default function TiendaDetalle() {
         </Grid>
 
         <Grid item xs={12} sm={4} md={4} id="contac-detalleTienda">
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} id="conten">
             <img className={classes.img} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
             <h2>Don Pepe</h2>
             <h3>¿Como comprar?</h3>
@@ -89,8 +90,8 @@ export default function TiendaDetalle() {
                 <Typography className="text"><span>WhatsApp:</span> 3015407389</Typography>
               </ListItem>
               <ListItem >
-                <ListItemIcon className="icon-what"> <WhatsAppIcon /> </ListItemIcon>
-                <Typography className="text"><span>WhatsApp:</span> 3015407389</Typography>
+                <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
+                <Typography className="text"><span>Telefono:</span> 8405083</Typography>
               </ListItem>
             </List>
 

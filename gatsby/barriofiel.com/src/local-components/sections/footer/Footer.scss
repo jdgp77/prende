@@ -1,0 +1,117 @@
+// @import "../../../local-sass/colors.scss";
+@import "../../../local-sass/colors.scss";
+
+footer {
+  .section-footer {
+    background-color: $footerBackground;
+    min-height: 200px;
+    color: $footerText;
+    padding: 15px;
+    > div {
+      width: 100%;
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: $footerTitle;
+    }
+    a {
+      color: $footerLink;
+    }
+    
+    .rowGrid {
+      .grid {
+        .gridPaper {
+          background-color: transparent;
+          padding: 16px;
+          box-shadow: none;
+          #logo {
+            display: flex;
+            height: 100%;
+            margin: auto;
+            width: 80%;
+          }
+          h5 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: .5rem;
+          }
+          ul {
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              div {
+                min-width: auto;
+              }
+            }
+          }
+          ul.icons {
+            a {
+              max-width: max-content;
+              margin: auto;
+              svg.ico-whats {
+                path {
+                  fill: $whatsapp;
+                }
+              }
+              svg.ico-faceb {
+                path {
+                  fill: $facebook;
+                }
+              }
+              svg.ico-twitt {
+                path {
+                  fill: $twitter;
+                }
+              }
+              svg.ico-instag {
+                border-radius: 10%;
+                background: #ffd776;
+                background: -moz-linear-gradient(45deg, #ffd776 0%, #f3a554 15%, #f15c3c 31%, #d94867 48%, #c32f87 64%, #7d63a7 81%, #5c6cb3 100%);
+                background: -webkit-gradient(left bottom, right top, color-stop(0%, #ffd776), color-stop(15%, #f3a554), color-stop(31%, #f15c3c), color-stop(48%, #d94867), color-stop(64%, #c32f87), color-stop(81%, #7d63a7), color-stop(100%, #5c6cb3));
+                background: -webkit-linear-gradient(45deg, #ffd776 0%, #f3a554 15%, #f15c3c 31%, #d94867 48%, #c32f87 64%, #7d63a7 81%, #5c6cb3 100%);
+                background: -o-linear-gradient(45deg, #ffd776 0%, #f3a554 15%, #f15c3c 31%, #d94867 48%, #c32f87 64%, #7d63a7 81%, #5c6cb3 100%);
+                background: -ms-linear-gradient(45deg, #ffd776 0%, #f3a554 15%, #f15c3c 31%, #d94867 48%, #c32f87 64%, #7d63a7 81%, #5c6cb3 100%);
+                background: linear-gradient(45deg, #ffd776 0%, #f3a554 15%, #f15c3c 31%, #d94867 48%, #c32f87 64%, #7d63a7 81%, #5c6cb3 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd776', endColorstr='#5c6cb3', GradientType=1);
+                path {
+                  fill: white;
+                }
+              }
+              &:hover .ico-whats,
+              &:hover .ico-faceb,
+              &:hover .ico-twitt,
+              &:hover .ico-instag {
+                font-size: 1.8rem;
+              }
+              
+              &:hover .ico-whats {
+                background-color: $whatsapp;
+                border-radius: 10%;
+                path {
+                  fill: white;
+                }
+              }
+              
+              &:hover .ico-faceb {
+                background-color: $facebook;
+                border-radius: 10%;
+                path {
+                  fill: white;
+                }
+              }
+              
+              &:hover .ico-twitt {
+                background-color: $twitter;
+                border-radius: 10%;
+                path {
+                  fill: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
