@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
     if (attributes && attributes.path && attributes.path.alias) {
       actions.createPage({
         path: attributes.path.alias,
-        component: path.resolve(`./src/global-components/pages/content/contentPage.js`),
+        component: path.resolve(`./src/local-components/pages/content/contentPage.js`),
         context: {
           title: attributes.title,
           body: (attributes.body ? (attributes.body.value ? attributes.body.value : '') : '')  
@@ -42,11 +42,10 @@ exports.createPages = async ({ actions, graphql }) => {
   }
 
   result.data.data.forEach(({ type, id, attributes }) => {
-    //console.log(attributes);
     if (attributes && attributes.path && attributes.path.alias) {
       actions.createPage({
         path: attributes.path.alias,
-        component: path.resolve(`./src/global-components/pages/content/contentPage.js`),
+        component: path.resolve(`./src/local-components/pages/content/contentPage.js`),
         context: {
           title: attributes.title,
           body: (attributes.field_description ? (attributes.field_description.value ? attributes.field_description.value : '') : ''),

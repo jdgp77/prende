@@ -9,13 +9,10 @@ class HomePage extends Component {
     return <div className="p-banner-platform">
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
-          <h1 className="p" >Tu plataforma educativa</h1>
+          <h1 className="p" >Conoce a los de tu mismo barrio</h1>
           <div className="p-text" >
             <p>
-              Nosotros no queremos realizar una plataforma virtual normal, queremos una como las que tienen las mejores aplicaciónes, estas que demuestran que la edicación puede ser divertida y amigable para todos.
-            </p>
-            <p>
-              Esta plataforma es para mostrar que la mejor forma de publicidad es enseñando, y esta plataforma muestra como hacerlo y como ustedes tambien pueden realizarlo.
+              Queremos apoyar la economia de Verbenal, ¿Como?, muchas tiendas estan a puerta cerrada y queremos abrirlas desde una aplicación.
             </p>
           </div>
         </Grid>

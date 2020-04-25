@@ -10,10 +10,10 @@ import PropTypes from "prop-types"
 
 import HeaderTop from '../global-components/sections/header/header-top/HeaderTop';
 import HeaderBottom from '../global-components/sections/header/header-bottom/HeaderBottom';
-import Header from '../global-components/sections/header/header/Header';
+import Header from '../local-components/sections/header/header/Header';
 import 'typeface-poppins';
 import "./layout.scss";
-import Footer from "../global-components/sections/footer/footer/Footer";
+import Footer from './sections/footer/Footer';
 import FooterButtom from "../global-components/sections/footer/footer-buttom/FooterButtom";
 
 class Layout extends Component {
@@ -39,7 +39,7 @@ class Layout extends Component {
       <>
         <div className={(!this.state.load ? 'p-preloader' : '')} ></div>
         <header className="section header" >
-          <HeaderTop></HeaderTop>
+          <HeaderTop></HeaderTop> 
           <Header></Header>
           <HeaderBottom></HeaderBottom>
         </header>
@@ -54,7 +54,6 @@ class Layout extends Component {
         </div>
         <footer>
           <Footer></Footer>
-          <FooterButtom></FooterButtom>
         </footer>
       </>
     )
