@@ -1,5 +1,5 @@
 import React from "react"
-import BuscarBlock from '../global-components/blocks/buscar/BuscarBlock'
+import BuscarBlock from '../local-components/blocks/buscar/BuscarBlock'
 
 import Layout from "../local-components/layout"
 import SEO from "../global-components/seo"

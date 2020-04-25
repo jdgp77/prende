@@ -13,7 +13,7 @@ function Header() {
   function onClickMobileMenu() {
     setShowMobileMenu(!showMobileMenu);
   };
-
+/*
   var data = useStaticQuery(graphql`query {
     dataJson {
       global {
@@ -24,7 +24,7 @@ function Header() {
       }
     }
   }`)
-  
+  */
   return <Paper elevation={1} >
     <div className="p-header" >
       <div className="p-logo" >

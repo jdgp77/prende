@@ -20,7 +20,7 @@ class ImgContent extends Component {
           </div>
         </Grid>
         <Grid item xs={12} sm={1}></Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} className="p-banner" >
           <Banner /><br/><br/>
         </Grid>
       </Grid>

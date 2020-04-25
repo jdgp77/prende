@@ -13,6 +13,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import Logo from './Logo';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,7 @@ export default function Footer() {
       <Grid className="rowGrid" container direction="row" justify="space-evenly" spacing={2}>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"}>
-              <img className={classes.img} alt="logo" id="logo" src="https://images.vexels.com/media/users/3/155745/isolated/preview/22b3b605af7059a62472c21ce1e63117-icono-de-la-taza-de-caf--de-camping-by-vexels.png" />
+              <Logo />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} md={3} className="grid">
