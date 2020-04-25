@@ -1,4 +1,5 @@
 $whatsapp: #12af0a;
+$phone: #2b0aaf;
 $location: #ec1212;
 
 .tienda-detalle {
@@ -24,6 +25,10 @@ $location: #ec1212;
   }
 
   #contac-detalleTienda {
+    #conten {
+      background-color: transparent;
+      box-shadow: none;
+    }
     img {
       border-radius: 50%;
       background-color: #808080e3;
@@ -62,20 +67,32 @@ $location: #ec1212;
     padding: 0;
     li {
       padding: 4px 16px;
-      .icon-what {
+      .icon-what,
+      .icon-phone,
+      .icon-location {
         min-width: 25px;
         svg {
           font-size: 1.2rem;
+        }
+      }
+      .icon-what {
+        svg {
           path {
             color: $whatsapp;
             fill: $whatsapp;
           }
         }
       }
-      .icon-location {
-        min-width: 25px;
+      .icon-phone {
         svg {
-          font-size: 1.2rem;
+          path {
+            color: $phone;
+            fill: $phone;
+          }
+        }
+      }
+      .icon-location {
+        svg {
           path {
             color: $location;
             fill: $location;

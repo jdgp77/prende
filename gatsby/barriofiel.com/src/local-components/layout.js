@@ -13,8 +13,7 @@ import HeaderBottom from './sections/header/header-bottom/HeaderBottom';
 import Header from './sections/header/header/Header';
 import 'typeface-poppins';
 import "./layout.scss";
-import Footer from "./sections/footer/footer/Footer";
-import FooterButtom from "./sections/footer/footer-buttom/FooterButtom";
+import Footer from './sections/footer/Footer';
 
 class Layout extends Component {
 
@@ -39,7 +38,7 @@ class Layout extends Component {
       <>
         <div className={(!this.state.load ? 'p-preloader' : '')} ></div>
         <header className="section header" >
-          <HeaderTop></HeaderTop>
+          <HeaderTop></HeaderTop> 
           <Header></Header>
           <HeaderBottom></HeaderBottom>
         </header>
@@ -54,7 +53,6 @@ class Layout extends Component {
         </div>
         <footer>
           <Footer></Footer>
-          <FooterButtom></FooterButtom>
         </footer>
       </>
     )
