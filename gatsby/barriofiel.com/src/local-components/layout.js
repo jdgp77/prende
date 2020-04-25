@@ -8,9 +8,9 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-import HeaderTop from './sections/header/header-top/HeaderTop';
-import HeaderBottom from './sections/header/header-bottom/HeaderBottom';
-import Header from './sections/header/header/Header';
+import HeaderTop from '../global-components/sections/header/header-top/HeaderTop';
+import HeaderBottom from '../global-components/sections/header/header-bottom/HeaderBottom';
+import Header from '../global-components/sections/header/header/Header';
 import 'typeface-poppins';
 import "./layout.scss";
 import Footer from './sections/footer/Footer';

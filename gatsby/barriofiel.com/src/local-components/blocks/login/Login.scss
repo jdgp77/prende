@@ -1,0 +1,33 @@
+.block.login {
+  max-width: 300px;
+  margin: 85px auto 130px;
+  form > div {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  input {
+    width: 100%;
+  }
+  a {
+    font-size: 14px;
+    color: #555555;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .send {
+    display: block;
+    margin: 40px auto;
+  }
+  .link {
+    font-size: 14px;
+    color: #555555;
+  }
+  .right {
+    text-align: right;
+  }
+}
