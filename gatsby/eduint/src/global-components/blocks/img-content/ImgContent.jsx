@@ -20,7 +20,7 @@ class ImgContent extends Component {
         </Grid>
         <Grid item xs={12} sm={1}></Grid>
         <Grid item xs={12} sm={6}>
-          <img src="/global-images/PacoHome.png" /><br/><br/>
+          <img src="/local-images/PacoHome.png" /><br/><br/>
         </Grid>
       </Grid>
     </div>

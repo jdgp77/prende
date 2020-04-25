@@ -6,7 +6,7 @@ export default (props) => {
   console.log(props);
   return <StaticQuery query={graphql`
     query {
-      file(relativePath: {eq: "global-images/Logo.png"}) {
+      file(relativePath: {eq: "local-images/Logo.png"}) {
         childImageSharp {
           fixed(width: 170, height: 46) {
             ...GatsbyImageSharpFixed
@@ -14,6 +14,6 @@ export default (props) => {
         }
       }
     }`}
-    render={data => <Img fixed={data.file || data.file.childImageSharp || data.file.childImageSharp.fixed} /> }
+    render={data => <Img fixed={data.file.childImageSharp.fixed} /> }
     />
 };

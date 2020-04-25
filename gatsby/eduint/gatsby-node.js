@@ -50,33 +50,3 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   });
 }
-
-
-exports.sourceNodes = async ({
-  actions: { createNode },
-  createContentDigest,
-}) => {
-  var url = `http://drupal/jsonapi/node/tutorial`;
-  var result;
-  try {
-    result = await axios.get(url);
-  } catch (e) {
-    console.log(`error fetching pages`, e);
-  }
-  result.data.data.forEach(({ type, id, attributes }) => {
-    if (attributes && attributes.path && attributes.path.alias) {
-      createNode({
-        nameWithOwner: attributes.title,
-        url: attributes.path.alias,
-        // required fields
-        id: attributes.id,
-        parent: null,
-        children: [],
-        internal: {
-          type: `Example`,
-          contentDigest: createContentDigest(attributes),
-        },
-      })
-    }
-  });
-}

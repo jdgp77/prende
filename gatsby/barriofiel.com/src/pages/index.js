@@ -1,8 +1,9 @@
 import React from "react"
 
-import Layout from "../global-components/layout"
+import Layout from "../local-components/layout"
 import { Component } from "react"
 import ImgContent from "../global-components/blocks/img-content/ImgContent"
+import BuscarBlock from "../local-components/blocks/buscar/BuscarBlock";
 
 
 class IndexPage extends Component {
@@ -31,6 +32,7 @@ class IndexPage extends Component {
             <ImgContent />
           </div>
         </div>
+        <BuscarBlock></BuscarBlock>
       </Layout>
   }
 }

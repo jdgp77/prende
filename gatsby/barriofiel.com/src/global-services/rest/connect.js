@@ -2,7 +2,7 @@ import defaultjs from './../default';
 import logger from './../logger/logger';
 
 export var token = '';
-const url_base = 'https://back.educacioninteractiva.com.co';
+const url_base = 'https://back.barriofiel.jdgp77.com';
 
 // Json Get : Read a external API with JSON 
 const jGet = info => {
