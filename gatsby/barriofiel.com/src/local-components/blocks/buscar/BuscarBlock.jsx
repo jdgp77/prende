@@ -136,7 +136,7 @@ class BuscarBlock extends Component {
           url: data.url,
           withToken: true,
           then: (result) => {
-            debugger;
+            //debugger;
             let valuesFromItems = getValuesFromItems(data.items, result);
             console.log('valuesFromItems', valuesFromItems);
             let options = this.getFiltersFromValues(valuesFromItems);

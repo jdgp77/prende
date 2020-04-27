@@ -1,10 +1,11 @@
 .p-header-bottom {
-  position: absolute;
   color: #AAA;
   font-family: Poppins;
   font-size: 13px;
-  left: 100px;
-  top: 117px;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 15px;
+
   a {
     display: inline-block;
     padding: 10px 10px;

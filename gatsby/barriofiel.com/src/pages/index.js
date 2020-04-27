@@ -27,7 +27,7 @@ class IndexPage extends Component {
   render() {
     return <Layout>
         <div className="section profesional" >
-          <div className="section principal-sidebar" ></div>
+          {/* <div className="section principal-sidebar" ></div> */}
           <div className="section principal-content" >
             <ImgContent />
           </div>

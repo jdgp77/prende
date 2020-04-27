@@ -3,7 +3,7 @@ $phone: #2b0aaf;
 $location: #ec1212;
 
 .tienda-detalle {
-  margin: 85px auto 130px;
+  //margin: 85px auto 130px;
   #contec-detalleTienda {
     img {
       height: 250px;
@@ -44,6 +44,9 @@ $location: #ec1212;
       li {
         justify-content: center;
         text-align: center;
+        a {
+          justify-content: center;
+        }
       }
     }
     iframe {
@@ -67,6 +70,22 @@ $location: #ec1212;
     padding: 0;
     li {
       padding: 4px 16px;
+      a {
+        display: flex;
+        svg {
+          min-width: 25px;
+        }
+        p {
+          color: rgba(0, 0, 0, 0.54);
+        }
+        &:hover {
+          text-decoration: none;
+        }
+        &:hover p {
+          text-decoration: none;
+          color: #3f51b5;
+        }
+      }
       .icon-what,
       .icon-phone,
       .icon-location {

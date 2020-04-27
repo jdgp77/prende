@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 class HeaderTop extends Component {
   render() {
-    return <Paper elevation={2}>
+    return <Paper elevation={2} id="gridHeader-Top">
       <div className="p-header-top" >
         <nav>
           <ul className="p-no-list-style">

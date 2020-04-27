@@ -1,15 +1,23 @@
 @import "../../../../local-sass/colors.scss";
 
 $heightHeaderTop: 45px;
+
+#gridHeader-Top {
+  height: auto;
+}
+
 .p-header-top {
   background-color: black;
   color: white;
   height: $heightHeaderTop;
   text-align: right;
   font-family: Poppins;
+  width: 100%;
+
   li {
     display: inline-block;
   }
+
   a {
     padding: 12px 20px;
     font-size: 14px;
@@ -19,6 +27,7 @@ $heightHeaderTop: 45px;
     color: white;
     cursor: pointer;
     text-decoration: none;
+
     &:hover {
       background-color: rgba($color: #fff, $alpha: 0.15);
       color: $linkColorLight;
