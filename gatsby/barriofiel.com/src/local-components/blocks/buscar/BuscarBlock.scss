@@ -1,16 +1,19 @@
 .section.search {
-  padding-top: 80px;
   padding-bottom: 80px;
   .p-search {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 40px auto;
     position: relative;
-  }
+    display: block;
     svg {
       position: absolute;
       z-index: 1;
       right: 14px;
       top: 13px;
+    }
+    > div {
+      width: 100%;
+      border: 0 solid transparent;
     }
     .p-search-input {
       margin: 0 auto;
@@ -42,4 +45,5 @@
     .search-result {
       padding-top: 37px;
     }
+  }
 }

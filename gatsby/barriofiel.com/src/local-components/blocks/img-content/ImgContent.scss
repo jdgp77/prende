@@ -1,11 +1,38 @@
 .p-banner-platform {
-  width: 1100px;
-  margin: 0 auto;
-  h1 {
-    margin-top: 25px;
-    padding-top: 55px;
+  // width: 1100px;
+  // margin: 0 auto;
+
+  // h1 {
+  //   margin-top: 25px;
+  //   padding-top: 55px;
+  // }
+
+  p {
+    margin-top: 14px;
+    margin-bottom: 14px;
   }
-  .p-banner {
-    margin-top: 17px;
+
+  // .p-banner {
+  //   margin-top: 17px;
+  // }
+
+  #contec-index {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  #logo-index {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: none;
+    .gatsby-image-wrapper {
+      width: 100% !important;
+      picture {
+        img {
+          object-fit: scale-down !important;
+        }
+      }
+    }
   }
 }

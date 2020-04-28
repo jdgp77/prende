@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Footer.scss';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
@@ -14,6 +14,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import Logo from './Logo';
+import { Link } from "gatsby"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,18 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
 export default function Footer() {
   const classes = useStyles();
 
   return (
     <div className={classes.root, "section-footer"}>
-      <Grid className="rowGrid" container direction="row" justify="space-evenly" spacing={2}>
+      <Grid className="rowGrid" container direction="row" justify="space-between" alignItems="flex-start" spacing={2}>
         <Grid item xs={12} sm={6} md={3} className="grid">
-          <Paper className={classes.paper, "gridPaper"}>
+          <Paper className={classes.paper, "gridPaper"} id="logo">
               <Logo />
           </Paper>
         </Grid>
@@ -48,18 +45,26 @@ export default function Footer() {
           <Paper className={classes.paper, "gridPaper"}>
             <Typography variant="h5">Nosotros</Typography>
             <List className="gridContenido">
-              <ListItemLink href="#">
-                <ListItemText primary="Buscar tienda" />
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemText primary="Quienes somos" />
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemText primary="Misión & Visión" />
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemText primary="¿Lo que quieres en tu barrio?" />
-              </ListItemLink>
+              <li>
+                <Link to='/buscar' >
+                  <ListItemText primary="Buscar tienda" />
+                </Link>
+              </li>
+              <li>
+                <Link to='/quienes-somos' >
+                  <ListItemText primary="Quienes somos" />
+                </Link>
+              </li>
+              <li>
+                <Link to='/#' >
+                  <ListItemText primary="Misión & Visión" />
+                </Link>
+              </li>
+              <li>
+                <Link to='/#' >
+                  <ListItemText primary="¿Lo que quieres en tu barrio?" />
+                </Link>
+              </li>
             </List>
           </Paper>
         </Grid>
@@ -67,12 +72,16 @@ export default function Footer() {
           <Paper className={classes.paper, "gridPaper"}>
             <Typography variant="h5">Plataforma</Typography>
             <List className="gridContenido">
-              <ListItemLink href="#">
-                <ListItemText primary="Descarga para Android" />
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemText primary="Descarga para Iphone" />
-              </ListItemLink>
+              <li>
+                <Link to='/#' >
+                  <ListItemText primary="Descarga para Android" />
+                </Link>
+              </li>
+              <li>
+                <Link to='/#' >
+                  <ListItemText primary="Descarga para Iphone" />
+                </Link>
+              </li>
             </List>
           </Paper>
         </Grid>
@@ -80,18 +89,29 @@ export default function Footer() {
           <Paper className={classes.paper, "gridPaper"}>
             <Typography variant="h5">Contactanos</Typography>
             <List className="gridContenido icons">
-              <ListItemLink href="#">
-                <ListItemIcon> <WhatsAppIcon className="ico-whats" /> </ListItemIcon>
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemIcon> <FacebookIcon className="ico-faceb" /> </ListItemIcon>
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemIcon> <TwitterIcon className="ico-twitt" /> </ListItemIcon>
-              </ListItemLink>
-              <ListItemLink href="#">
-                <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
-              </ListItemLink>
+              <Typography className="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </Typography>
+              <Container wrap="nowrap">
+                <li>
+                  <Link to='/#' >
+                    <ListItemIcon> <WhatsAppIcon className="ico-whats" /> </ListItemIcon>
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/#' >
+                    <ListItemIcon> <FacebookIcon className="ico-faceb" /> </ListItemIcon>
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/#' >
+                    <ListItemIcon> <TwitterIcon className="ico-twitt" /> </ListItemIcon>
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/#' >
+                    <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
+                  </Link>
+                </li>
+              </Container>
             </List>
           </Paper>
         </Grid>
