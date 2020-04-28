@@ -201,7 +201,7 @@ class BuscarBlock extends Component {
     return <div className="section search" >
       <div className="place-search" >
         <form autoComplete="off">
-          <TextField className="p-search-input"  id="p-search-input" label="¿Que Buscas?" variant="outlined" onChange={this.onChangePrincipalInput} onKeyUp={this.onKeyUpPrincipalInput} />
+          <TextField className="p-search-input"  id="p-search-input" label="Busca, tiendas, papelerias y más" variant="outlined" onChange={this.onChangePrincipalInput} onKeyUp={this.onKeyUpPrincipalInput} />
         </form>
       </div>
       <div className="section search-result" >

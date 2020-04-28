@@ -16,7 +16,7 @@ function Header() {
   return <Paper elevation={1} >
     <div className="p-header" >
       <div className="p-logo" >
-        <Logo />
+      <Link to='/' ><Logo /></Link>
       </div>
       <nav className="p-principal-menu">
         <ul className="p-no-list-style">
