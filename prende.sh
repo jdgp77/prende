@@ -122,8 +122,7 @@ then
     fi
     if [ "$3" = "build" ]
     then
-      sh prende.sh gatsby-web ${2} command npm run-script build
-      sh prende.sh gatsby-web ${2} command mv build $3
+      sh gatsby/prende-scripts/build.sh ${2}
     fi
     if [ "$2" = "-h" ] || [ "$2" = "--help" ]
     then
@@ -152,8 +151,8 @@ then
   then
     cd firebase
     cp .firebaserc_org .firebaserc
-    sed -i "s/eduintgd/${4}/g" .firebaserc
-    cp -r "../gatsby/${3}/build" public
+    sed -i "s/eduintgd/${4}/g" ".firebaserc_org"
+    cp -r "../gatsby/${3}/public" public
     firebase deploy
     rm .firebaserc
     rm -rf public
@@ -195,8 +194,9 @@ then
   echo ""
   echo "  prende drupal install:with-mysql                             [Instala drupal con base de datos]"
   echo ""
-  echo "  prende gatsbt build <nombrecarpeta>                          [Realiza el build pero en la carpeta nombrecarpeta]";
+  echo "  prende gatsbt build <nombrecarpeta>                          [Realiza el build pero en la carpeta nombrecarpeta]"
   echo "  prende firebase deploy <nombrecarpeta> <proyecto-firebase>   [Sube a firebase el deploy nombrecarpeta]"
+  echo "  prende firebase deploy barriofiel.com barriofiel             [Sube a firebase el deploy nombrecarpeta]"
   echo ""
   echo ""
   echo "  Ejemplos:"

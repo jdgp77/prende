@@ -15,7 +15,7 @@ function Header() {
   return <Paper elevation={1} id="gridHeader">
     <div className="p-header" >
       <div className="p-logo" >
-        <Logo />
+      <Link to='/' ><Logo /></Link>
       </div>
 
       <nav className="p-principal-menu">

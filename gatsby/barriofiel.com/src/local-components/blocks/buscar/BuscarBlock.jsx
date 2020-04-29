@@ -3,7 +3,7 @@ import './BuscarBlock.scss';
 import TextField from '@material-ui/core/TextField';
 import TutorialList from '../shop-list/ShopList';
 import jGet, { getValuesFromItems } from '../../../global-services/rest/connect';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 class BuscarBlock extends Component {
 
@@ -18,9 +18,9 @@ class BuscarBlock extends Component {
             nameFieldState: 'listCourses',
             items: {
               title: ['attributes', 'title'],
-              summary: ['attributes', 'field_description', 'value'],
+              description: ['attributes', 'field_short_description', 'value'],
               body: ['attributes', 'field_description', 'value', ':FilterTextToLocalFormat'],
-              link: ['attributes', 'path', 'alias']
+              link: ['attributes', 'path', 'alias'],
             },
             info: {
               type: 'media',
@@ -136,7 +136,6 @@ class BuscarBlock extends Component {
           url: data.url,
           withToken: true,
           then: (result) => {
-            //debugger;
             let valuesFromItems = getValuesFromItems(data.items, result);
             console.log('valuesFromItems', valuesFromItems);
             let options = this.getFiltersFromValues(valuesFromItems);
@@ -158,6 +157,8 @@ class BuscarBlock extends Component {
               newState[data.nameFieldState] = valuesFromItems;
             }
             
+            
+            console.log('newState', newState);
             this.setState(newState)
           },
           err: (result) => {
@@ -171,8 +172,9 @@ class BuscarBlock extends Component {
   render() {
     return <div className="section search" >
       <div className="place-search" >
-        <form autoComplete="off">
-          <TextField className="p-search-input"  id="p-search-input" label="¿Que Buscas?" variant="outlined" onChange={this.onChangePrincipalInput} onKeyUp={this.onKeyUpPrincipalInput} />
+        <form autoComplete="off" className="p-search" >
+          <SearchIcon style={{ fontSize: 30, color: '#333' }} />
+          <TextField className="p-search-input" id="p-search-input" label="Busca, tiendas, papelerias y más" variant="outlined" onChange={this.onChangePrincipalInput} onKeyUp={this.onKeyUpPrincipalInput} />
         </form>
       </div>
       <div className="section search-result" >

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './List.scss';
 import Paper from '@material-ui/core/Paper';
 import ImageElement from '../../../elements/image/ImageElement';
+import { Link } from 'gatsby';
 
 class List extends Component {
   constructor() {
@@ -60,6 +61,7 @@ class List extends Component {
 				ourClass = "list col s12 l" + (12/numCols);
 		}
 
+		console.log('lists', lists);
 		let listItems = lists.map((item, index) => {
 			let url = '';
 			let target = '';
@@ -70,21 +72,26 @@ class List extends Component {
 						target = item.link.target;
 					}
 				}
+				else {
+					url = item.link;
+					target = '_self';
+				}
 			}
+			console.log('lists', lists);
 			
 			var getItemStructure = () => {
 				switch(type) {
 					case 'items':
-						return (<Paper key={index} className="item" elevation={0}>
+						return (<Paper key={index} className="item" elevation={1}>
 								<div className="itemcard items">
-									<a target={target} href={url} >
+									<Link target={target} to={url} >
 										<ImageElement src={item.image ? item.image : ''}></ImageElement>
-									</a>
+									</Link>
 									<div className="content">
 										<div className="container">
-											<a target={target} href={url} >
+											<Link target={target} to={url} >
 												<h3 className="p" >{ item.title }</h3>
-											</a>
+											</Link>
 											<div className="paragraph" dangerouslySetInnerHTML={{__html: item.description }}></div>
 										</div>
 									</div>

@@ -75,7 +75,7 @@ class List extends Component {
 			var getItemStructure = () => {
 				switch(type) {
 					case 'items':
-						return (<Paper key={index} className="item" elevation={0}>
+						return (<Paper key={index} className="item" elevation={1}>
 								<div className="itemcard items">
 									<a target={target} href={url} >
 										<ImageElement src={item.image ? item.image : ''}></ImageElement>

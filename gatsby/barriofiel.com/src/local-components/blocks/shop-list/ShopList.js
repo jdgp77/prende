@@ -132,6 +132,7 @@ class ShopList extends Component {
     
     let countListItems
     let listsHtml = lists.map((list, index) => {
+      console.log('list', list);
       return <List key={index} type={"card"} info={list.info} data={list.data}></List>
     });
     

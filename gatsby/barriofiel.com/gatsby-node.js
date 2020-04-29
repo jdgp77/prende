@@ -34,21 +34,40 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   });
 
-  url = `https://back.barriofiel.jdgp77.com/jsonapi/node/shop`;
+  url = `https://back.barriofiel.jdgp77.com/jsonapi/node/shop?include=field_shop_image`;
   try {
     result = await axios.get(url);
   } catch (e) {
     console.log(`error fetching pages`, e);
   }
 
-  result.data.data.forEach(({ type, id, attributes }) => {
+  let included = result.data.included;
+  result.data.data.forEach(({ type, id, attributes, relationships }) => {
     if (attributes && attributes.path && attributes.path.alias) {
+      let arImagesId = [];
+      for (let i = 0; i < relationships.field_shop_image.data.length ; i++) {
+        var image = relationships.field_shop_image.data[i];
+        arImagesId[arImagesId.length] = image['id'];
+      }
+      let arImages = [];
+      for (let i = 0; i < included.length ; i++) {
+        for (let j = 0; j < arImagesId.length ; j++) {
+          if (included[i].id == arImagesId[j]) {
+            var inc = included[i];
+            if (inc && inc.attributes && inc.attributes.uri && inc.attributes.uri.url) {
+              arImages[arImages.length] =  'https://back.barriofiel.jdgp77.com' + inc.attributes.uri.url;
+            }
+          }
+        }
+      }
+      
       actions.createPage({
         path: attributes.path.alias,
-        component: path.resolve(`./src/local-components/pages/content/contentPage.js`),
+        component: path.resolve(`./src/local-components/pages/shop/shopPage.jsx`),
         context: {
           title: attributes.title,
           body: (attributes.field_description ? (attributes.field_description.value ? attributes.field_description.value : '') : ''),
+          image: arImages,
           field_short_description: (attributes.field_short_description ? attributes.field_short_description : ''),
           field_description: (attributes.field_description ? (attributes.field_description.value ? attributes.field_description.value : '') : ''),
           phone: (attributes.phone ? attributes.phone : ''),
