@@ -114,7 +114,7 @@ export const getValuesFromItems = (items, result) => {
             arDataRelation[arDataRelation.length] = prevElemeData[i];
           }
         }
-        debugger;
+        //debugger;
 
         // Añade el valor relacionado 
         for (let i in arDataRelation) {
