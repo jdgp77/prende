@@ -14,13 +14,36 @@ class BuscarBlock extends Component {
       info: {
         result: [
           {
-            url: '/jsonapi/node/shop',
+            url: '/jsonapi/node/shop?include=field_shop_image',
             nameFieldState: 'listCourses',
             items: {
               title: ['attributes', 'title'],
               description: ['attributes', 'field_short_description', 'value'],
               body: ['attributes', 'field_description', 'value', ':FilterTextToLocalFormat'],
               link: ['attributes', 'path', 'alias'],
+              image: (data, included) => {
+                let relationships = data.relationships;
+                if (relationships) {
+                  let arImages = [];
+                  let arImagesId = [];
+                  for (let i = 0; i < relationships.field_shop_image.data.length ; i++) {
+                    let image = relationships.field_shop_image.data[i];
+                    arImagesId[arImagesId.length] = image['id'];
+                  }
+                  for (let i = 0; i < included.length ; i++) {
+                    for (let j = 0; j < arImagesId.length ; j++) {
+                      if (included[i].id == arImagesId[j]) {
+                        var inc = included[i];
+                        if (inc && inc.attributes && inc.attributes.uri && inc.attributes.uri.url) {
+                          arImages[arImages.length] =  'https://back.barriofiel.jdgp77.com' + inc.attributes.uri.url;
+                        }
+                      }
+                    }
+                  }
+                  return arImages[0];
+                }
+                return '';
+              },
             },
             info: {
               type: 'media',
@@ -170,6 +193,7 @@ class BuscarBlock extends Component {
   }
 
   render() {
+    console.log('this.state.listCourses', this.state.listCourses);
     return <div className="section search" >
       <div className="place-search" >
         <form autoComplete="off" className="p-search" >
