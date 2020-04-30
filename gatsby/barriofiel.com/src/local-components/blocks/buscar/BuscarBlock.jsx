@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import TutorialList from '../shop-list/ShopList';
 import jGet, { getValuesFromItems } from '../../../global-services/rest/connect';
 import SearchIcon from '@material-ui/icons/Search';
+import { getShopImages } from '../../../local-services/rest/shop';
 
 class BuscarBlock extends Component {
 
@@ -14,13 +15,20 @@ class BuscarBlock extends Component {
       info: {
         result: [
           {
-            url: '/jsonapi/node/shop',
+            url: '/jsonapi/node/shop?include=field_shop_image',
             nameFieldState: 'listCourses',
             items: {
               title: ['attributes', 'title'],
               description: ['attributes', 'field_short_description', 'value'],
               body: ['attributes', 'field_description', 'value', ':FilterTextToLocalFormat'],
               link: ['attributes', 'path', 'alias'],
+              image: (data, included) => {
+                let arImages = getShopImages(data, included);
+                if (arImages) {
+                  return arImages[0];
+                }
+                return 'casa';
+              },
             },
             info: {
               type: 'media',
@@ -170,6 +178,7 @@ class BuscarBlock extends Component {
   }
 
   render() {
+    console.log('this.state.listCourses', this.state.listCourses);
     return <div className="section search" >
       <div className="place-search" >
         <form autoComplete="off" className="p-search" >

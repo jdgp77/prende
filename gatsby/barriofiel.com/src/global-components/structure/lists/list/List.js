@@ -84,8 +84,8 @@ class List extends Component {
 					case 'items':
 						return (<Paper key={index} className="item" elevation={1}>
 								<div className="itemcard items">
-									<Link target={target} to={url} >
-										<ImageElement src={item.image ? item.image : ''}></ImageElement>
+									<Link className="p-image-link" target={target} to={url} >
+										<ImageElement src={item.image ? item.image : ''} alt={item.alt ? item.alt : ''} ></ImageElement>
 									</Link>
 									<div className="content">
 										<div className="container">
