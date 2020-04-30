@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import TutorialList from '../shop-list/ShopList';
 import jGet, { getValuesFromItems } from '../../../global-services/rest/connect';
 import SearchIcon from '@material-ui/icons/Search';
+import { getShopImages } from '../../../local-services/rest/shop';
 
 class BuscarBlock extends Component {
 
@@ -22,27 +23,11 @@ class BuscarBlock extends Component {
               body: ['attributes', 'field_description', 'value', ':FilterTextToLocalFormat'],
               link: ['attributes', 'path', 'alias'],
               image: (data, included) => {
-                let relationships = data.relationships;
-                if (relationships) {
-                  let arImages = [];
-                  let arImagesId = [];
-                  for (let i = 0; i < relationships.field_shop_image.data.length ; i++) {
-                    let image = relationships.field_shop_image.data[i];
-                    arImagesId[arImagesId.length] = image['id'];
-                  }
-                  for (let i = 0; i < included.length ; i++) {
-                    for (let j = 0; j < arImagesId.length ; j++) {
-                      if (included[i].id == arImagesId[j]) {
-                        var inc = included[i];
-                        if (inc && inc.attributes && inc.attributes.uri && inc.attributes.uri.url) {
-                          arImages[arImages.length] =  'https://back.barriofiel.jdgp77.com' + inc.attributes.uri.url;
-                        }
-                      }
-                    }
-                  }
+                let arImages = getShopImages(data, included);
+                if (arImages) {
                   return arImages[0];
                 }
-                return '';
+                return 'casa';
               },
             },
             info: {
