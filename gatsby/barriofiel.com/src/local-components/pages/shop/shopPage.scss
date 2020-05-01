@@ -3,8 +3,6 @@ $phone: #2b0aaf;
 $location: #ec1212;
 
 .page-shop.content {
-  width: 1200px;
-  padding: 0 0px 50px;
   .p-principal {
     min-height: 200px;
     z-index: 0;
@@ -13,11 +11,13 @@ $location: #ec1212;
     margin-left: 10px;
     margin-right: 10px;
     background-color: #F9F9F9;
+
     h1 {
       text-align: center;
       font-weight: normal;
     }
   }
+
   .p-description {
     padding-top: 15px;
     padding-left: 62px;
@@ -26,17 +26,18 @@ $location: #ec1212;
 }
 
 .tienda-detalle-page {
-  margin: 41px auto 130px;
   #contec-detalleTienda {
     p {
       text-align: left;
     }
+
     #contacFooter-storeDetail {
       img {
         width: 100%;
         height: auto;
         border-radius: 50%;
       }
+
       h3 {
         text-align: left;
         padding-left: 16px;
@@ -48,24 +49,49 @@ $location: #ec1212;
     #conten {
       background-color: transparent;
       box-shadow: none;
+
+      h4,
+      h3 {
+        text-align: center;
+      }
+
+      ul {
+        li {
+          a {
+            svg {
+              display: flex;
+            }
+
+            p {
+              display: flex;
+            }
+          }
+        }
+      }
     }
+
     img {
       border-radius: 50%;
       background-color: #808080e3;
     }
+
     p.contenido {
+      text-align: center;
       margin: 0;
+
       span {
         color: #af0a0a;
         font-weight: bold;
       }
     }
+
     ul {
       li {
         justify-content: center;
         text-align: center;
       }
     }
+
     iframe {
       width: 100%;
       height: 450px;
@@ -77,24 +103,54 @@ $location: #ec1212;
   h2 {
     font-size: 1.3rem;
     margin-top: .5rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54);
   }
-  h3, h4 {
+
+  h3,
+  h4 {
     margin-bottom: .25rem;
     font-weight: 400;
     font-size: 1rem;
   }
+
   ul {
     padding: 0;
+
     li {
       padding: 4px 16px;
+
+      a {
+        display: flex;
+
+        svg {
+          min-width: 25px;
+        }
+
+        p {
+          color: rgba(0, 0, 0, 0.87);
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:hover p {
+          text-decoration: none;
+          color: #3f51b5;
+        }
+      }
+
       .icon-what,
       .icon-phone,
       .icon-location {
         min-width: 25px;
+
         svg {
           font-size: 1.2rem;
         }
       }
+
       .icon-what {
         svg {
           path {
@@ -103,6 +159,7 @@ $location: #ec1212;
           }
         }
       }
+
       .icon-phone {
         svg {
           path {
@@ -111,6 +168,7 @@ $location: #ec1212;
           }
         }
       }
+
       .icon-location {
         svg {
           path {
@@ -119,11 +177,14 @@ $location: #ec1212;
           }
         }
       }
+
       .text {
         margin: 0;
+
         span {
           font-weight: bold;
         }
+
         p {
           font-size: 1rem;
           line-height: 1.5;

@@ -1,10 +1,30 @@
 @import '../local-sass/colors.scss';
 
+html,
+body {
+
+  /* scroll */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
 body {
   background-color: $bodyBackground;
   font-family: Poppins;
   padding-top: 0;
   margin: 0;
+
   main {
     margin: 85px auto 130px;
     // border: 1px solid red;
@@ -24,6 +44,7 @@ ul.p-no-list-style {
   height: 100%;
   background-color: white;
   z-index: 10;
+
   /* background-image: radial-gradient(red, yellow, green); */
   &:before {
     content: '... cargando ...';
@@ -43,17 +64,21 @@ ul.p-no-list-style {
     animation: mymove 2.5s infinite;
     opacity: 0;
   }
+
   @keyframes mymove {
     0% {
       opacity: 0;
     }
+
     50% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   &:after {
     content: '';
     display: block;
@@ -70,6 +95,7 @@ ul.p-no-list-style {
 
 button.MuiButton-containedPrimary {
   background-color: $linkColor;
+
   &:hover {
     background-color: $linkColorLight;
   }
@@ -80,11 +106,13 @@ h1.p {
   color: #555;
   font-weight: normal;
 }
+
 h2.p {
   font-size: 30px;
   color: #555;
   font-weight: normal;
 }
+
 h3.p {
   font-size: 20px;
   color: #555;
