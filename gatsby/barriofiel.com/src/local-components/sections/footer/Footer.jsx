@@ -72,9 +72,9 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"}>
-            <Typography variant="h5">Contacta a BarrioFiel Verbenal</Typography>
+            <Typography variant="h5">Contacta a<br/>BarrioFiel Verbenal</Typography>
             <List className="gridContenido icons">
-              <Typography className="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </Typography>
+              <Typography className="text">Siguenos o comunicate con nosotros:</Typography>
               <Container wrap="nowrap">
                 <li>
                   <Link to='/#' >

@@ -26,13 +26,13 @@ class IndexPage extends Component {
 
   render() {
     return <Layout>
+        <BuscarBlock></BuscarBlock>
         <div className="section profesional" >
           {/* <div className="section principal-sidebar" ></div> */}
           <div className="section principal-content" >
             <ImgContent />
           </div>
         </div>
-        <BuscarBlock></BuscarBlock>
       </Layout>
   }
 }
