@@ -43,51 +43,36 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"}>
-            <Typography variant="h5">Nosotros</Typography>
+            <Typography variant="h5">Barrio Fiel</Typography>
             <List className="gridContenido">
+              <li>
+                <Link to='/' >
+                  <ListItemText primary="Inicio" />
+                </Link>
+              </li>
               <li>
                 <Link to='/buscar' >
                   <ListItemText primary="Buscar tienda" />
                 </Link>
               </li>
+            </List>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3} className="grid">
+          <Paper className={classes.paper, "gridPaper"}>
+            <Typography variant="h5">Nosotros</Typography>
+            <List className="gridContenido">
               <li>
                 <Link to='/quienes-somos' >
                   <ListItemText primary="Quienes somos" />
                 </Link>
               </li>
-              <li>
-                <Link to='/#' >
-                  <ListItemText primary="Misión & Visión" />
-                </Link>
-              </li>
-              <li>
-                <Link to='/#' >
-                  <ListItemText primary="¿Lo que quieres en tu barrio?" />
-                </Link>
-              </li>
             </List>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"}>
-            <Typography variant="h5">Plataforma</Typography>
-            <List className="gridContenido">
-              <li>
-                <Link to='/#' >
-                  <ListItemText primary="Descarga para Android" />
-                </Link>
-              </li>
-              <li>
-                <Link to='/#' >
-                  <ListItemText primary="Descarga para Iphone" />
-                </Link>
-              </li>
-            </List>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3} className="grid">
-          <Paper className={classes.paper, "gridPaper"}>
-            <Typography variant="h5">Contactanos</Typography>
+            <Typography variant="h5">Contacta a BarrioFiel Verbenal</Typography>
             <List className="gridContenido icons">
               <Typography className="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </Typography>
               <Container wrap="nowrap">

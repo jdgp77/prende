@@ -36,19 +36,19 @@ export default function TiendaDetalle(props) {
     <Layout>
       <div className={classes.root, "tienda-detalle-page page-shop content"}>
         <Grid container direction="row" justify="center" alignItems="flex-start" spacing={3}>
-          <Grid item xs={12} sm={8} md={8} id="contec-detalleTienda">
+          <Grid item xs={12} sm={8} md={8} id="contec-detalleTienda" className="p-contec-detalletienda" >
             <Paper elevation={0} className={'p-principal'}>
               <h1 className="p" >{props.pageContext.title}</h1>
               <Grid container spacing={2}>
                 <Grid item xs={12} >
-                  <img className={classes.image} alt="complex" src={props.pageContext.image[0]} />
+                  <img className={classes.image, 'p-w100'} alt="complex" src={props.pageContext.image[0]} />
                   <div className="p-description" dangerouslySetInnerHTML={{__html: filterTextFormat(props.pageContext.body) }} ></div>
                 </Grid>
 
                 <Grid item xs={12} id="contacFooter-storeDetail">
                   <Grid container spacing={2}>
-                    <Grid item xs={4}>
-                      <img className={classes.img} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
+                    <Grid item xs={12} sm={4} md={4}>
+                      <img className={classes.img, 'p-w100'} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
                       <h2>{props.pageContext.title}</h2>
                     </Grid>
                     <Grid item xs={8}>
@@ -76,7 +76,7 @@ export default function TiendaDetalle(props) {
 
           <Grid item xs={12} sm={4} md={4} id="contac-detalleTienda">
             <Paper className={classes.paper} id="conten">
-              <img className={classes.img} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
+              <img className={classes.img, 'p-w100'} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
               <h2>{props.pageContext.title}</h2>
               <h3>¿Como comprar?</h3>
               <List>
