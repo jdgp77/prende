@@ -25,6 +25,11 @@ $location: #ec1212;
       }
     }
   }
+  #contac-detalleTienda {
+    @media (max-width: 600px) {
+      padding: 0;
+    }
+  }
 
   #contac-detalleTienda {
     #conten {

@@ -26,8 +26,7 @@ body {
   margin: 0;
 
   main {
-    margin: 85px auto 130px;
-    // border: 1px solid red;
+    margin: 85px auto 0px;
   }
 }
 
@@ -129,4 +128,8 @@ h3.p {
 
 strong {
   font-weight: bold;
+}
+
+.p-w100 {
+  width: 100%;
 }

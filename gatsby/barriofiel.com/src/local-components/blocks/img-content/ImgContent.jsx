@@ -21,23 +21,24 @@ export default function ImgContent() {
   const classes = useStyles();
   return (
     <div className={classes.root, "p-banner-platform"}>
-      <Grid container direction="row" justify="space-around" alignItems="center" spacing={3}>
-        <Grid item xs sm md>
-          <Paper className={classes.paper} id="contec-index">
-            <TitleElement type="h1" >Compra en Verbenal</TitleElement>
-            <div className="p-text" >
-              <Typography variant="body1" >No importa tipo de buen tienda o buen negocio, <strong>inscribete</strong> y buscaremos conectarte con tus clientes del barrio.</Typography>
-              <Typography variant="body1">Queremos apoyar la <strong>economia de Verbenal.</strong></Typography>
-            </div>
-          </Paper>
+      <div>
+        <Grid container direction="row" justify="space-around" alignItems="center" spacing={3}>
+          <Grid item xs sm md>
+            <Paper className={classes.paper} id="contec-index">
+              <TitleElement type="h1" >Compra dentro de Verbenal</TitleElement>
+              <div className="p-text" >
+                <Typography variant="body1" >Verbenal tiene muchisimos tipos de negocios, y queremos que te conectes con todos: Papelerias, tiendas o arreglo de equipos.</Typography>
+                <Typography variant="body1" >Si tu tienes un negocio, y no sabes como vender en linea contactate con nosotros y te ayudaremos.</Typography>
+              </div>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className="p-banner" >
+            <Paper className={classes.paper} id="logo-index">
+              <Banner />
+            </Paper>
+          </Grid>
         </Grid>
-        {/* <Grid item xs={12} sm={1}></Grid> */}
-        <Grid item xs={12} sm={6} md={6} className="p-banner" >
-          <Paper className={classes.paper} id="logo-index">
-            <Banner />
-          </Paper>
-        </Grid>
-      </Grid>
+      </div>
     </div>
   );
 }

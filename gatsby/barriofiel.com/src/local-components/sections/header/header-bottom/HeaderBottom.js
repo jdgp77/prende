@@ -11,10 +11,7 @@ import './HeaderBottom.scss';
 class HeaderBottom extends Component {
   render() {
     return <div className="p-header-bottom" >
-      <a>Home</a> > <a>Tienda</a>
-      {/* <li> <Link to='/' >Inicio</Link> </li>
-      <li> <Link to='/buscar' >Buscar</Link> </li>
-      <li> <Link to='/quienes-somos' >Quienes somos</Link> </li> */}
+      {/*<a>Home</a> > <a>Tienda</a> */}
     </div>
   }
 }

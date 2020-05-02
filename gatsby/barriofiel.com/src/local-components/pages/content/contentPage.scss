@@ -1,6 +1,9 @@
 .page.content {
   padding: 0 20px 50px;
   margin: 0 auto;
+  @media (max-width: 600px) {
+    padding: 0;
+  }
   .p-principal {
     min-height: 200px;
     max-width: 660px;
@@ -9,6 +12,11 @@
     padding: 17px 62px 80px;
     margin-top: 41px;
     background-color: #F9F9F9;
+    
+    @media (max-width: 600px) {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
     h1 {
       text-align: center;
       font-weight: normal;

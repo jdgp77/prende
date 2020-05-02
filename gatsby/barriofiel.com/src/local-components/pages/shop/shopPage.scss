@@ -22,11 +22,18 @@ $location: #ec1212;
     padding-top: 15px;
     padding-left: 62px;
     padding-right: 62px;
+    @media (max-width: 600px) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
   }
 }
 
 .tienda-detalle-page {
   #contec-detalleTienda {
+    @media (max-width: 600px) {
+      padding: 0;
+    }
     p {
       text-align: left;
     }
@@ -89,6 +96,9 @@ $location: #ec1212;
       li {
         justify-content: center;
         text-align: center;
+      }
+      a {
+        justify-content: center;
       }
     }
 
