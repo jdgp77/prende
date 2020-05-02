@@ -25,7 +25,9 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-material-ui-carousel": "^1.4.3",
     "react-muuri": "^0.3.0",
+    "react-swipeable-views": "^0.13.9",
     "typeface-poppins": "0.0.72"
   },
   "devDependencies": {

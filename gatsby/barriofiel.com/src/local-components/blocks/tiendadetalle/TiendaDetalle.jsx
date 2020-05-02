@@ -14,6 +14,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Link from '@material-ui/core/Link';
+import Carousel from '../../structure/carousel/Carousel'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,11 +48,14 @@ export default function TiendaDetalle() {
               <Grid item xs={12}>
                 <h1>Tienda de Don Pepe</h1>
                 <img className={classes.image} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
+
                 <Container >
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu tellus dictum, bibendum ante in, efficitur lectus. Quisque ac sem at arcu dictum hendrerit. Donec eget velit lectus. Fusce pellentesque luctus nulla. Proin imperdiet, turpis ac volutpat luctus, felis arcu congue diam, ut sollicitudin neque enim non purus. Curabitur vestibulum tristique dignissim. Nullam vitae molestie nibh, at dignissim enim. Sed faucibus ante ac turpis posuere viverra. Donec at metus nec augue rutrum imperdiet vitae sed diam.</p>
                   <p>Vestibulum dapibus ligula lectus, eget viverra erat pellentesque a. Nullam rutrum lacus sit amet ante tristique, eget interdum risus lobortis. Aliquam erat volutpat. Aliquam imperdiet vulputate dolor, eget molestie quam sodales a. In porttitor neque a dolor aliquet, nec blandit mauris consequat. Ut mauris ligula, accumsan ut nisi sed, faucibus pharetra tortor. Aenean ac venenatis purus, et vestibulum metus. Curabitur scelerisque posuere gravida. Praesent consectetur interdum justo, sit amet lobortis nulla feugiat eu. Aliquam tempus rhoncus odio. Sed blandit nulla in purus venenatis maximus. Curabitur molestie euismod felis, quis viverra enim accumsan vitae.</p>
                   <p>Curabitur et justo ante. Praesent in vehicula eros. Vestibulum eu arcu eget risus consequat tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus efficitur augue ac dui consectetur tincidunt. Suspendisse fringilla aliquet condimentum. Fusce commodo leo felis, sed imperdiet ex maximus non. Pellentesque pharetra nunc quis tellus vulputate, malesuada interdum quam viverra. Nulla ut nunc urna. In sollicitudin in lorem ac bibendum. Pellentesque faucibus imperdiet erat a posuere. Curabitur finibus nibh a dignissim sollicitudin. Aliquam euismod sodales nibh, ut tristique lectus vestibulum a. Duis sit amet interdum ipsum, in dapibus leo. Quisque sodales luctus cursus. Phasellus a convallis mauris.</p>
                 </Container>
+
+                <Carousel/>
               </Grid>
 
               <Grid item xs={12} id="contacFooter-storeDetail">
