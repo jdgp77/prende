@@ -2,10 +2,9 @@
 
 html,
 body {
-
-  /* scroll */
   ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
   }
 
   ::-webkit-scrollbar-track {
@@ -27,6 +26,10 @@ body {
 
   main {
     margin: 85px auto 0px;
+    .MuiGrid-spacing-xs-3 {
+      width: 100%;
+      margin: auto;
+    }
   }
 }
 
@@ -123,7 +126,7 @@ h3.p {
 }
 
 .section.header {
-  height: 115px;
+  height: 125px;
 }
 
 strong {

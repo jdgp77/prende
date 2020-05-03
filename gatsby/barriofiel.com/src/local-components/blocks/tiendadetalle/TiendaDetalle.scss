@@ -3,6 +3,8 @@ $phone: #2b0aaf;
 $location: #ec1212;
 
 .tienda-detalle {
+  padding-bottom: 50px;
+
   #contec-detalleTienda {
     img {
       height: 250px;
@@ -25,6 +27,7 @@ $location: #ec1212;
       }
     }
   }
+
   #contac-detalleTienda {
     @media (max-width: 600px) {
       padding: 0;
