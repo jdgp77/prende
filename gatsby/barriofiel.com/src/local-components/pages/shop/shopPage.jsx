@@ -14,6 +14,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { filterTextFormat } from '../../../global-services/rest/connect';
+import Carousel from '../../structure/carousel/Carousel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +43,7 @@ export default function TiendaDetalle(props) {
               <h1 className="p" >{props.pageContext.title}</h1>
               <Grid container spacing={2}>
                 <Grid item xs={12} >
-                  <img className={classes.image, 'p-w100'} alt="complex" src={props.pageContext.image[0]} />
+                  <Carousel data={props.pageContext.image} />
                   <div className="p-description" dangerouslySetInnerHTML={{__html: filterTextFormat(props.pageContext.body) }} ></div>
                 </Grid>
 
