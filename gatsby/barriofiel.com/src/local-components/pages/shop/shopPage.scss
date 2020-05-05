@@ -6,6 +6,7 @@ $location: #ec1212;
   max-width: 1200px;
   padding: 0 0px 50px;
   margin: 0 auto;
+
   .p-principal {
     min-height: 200px;
     z-index: 0;
@@ -25,6 +26,7 @@ $location: #ec1212;
     padding-top: 15px;
     padding-left: 62px;
     padding-right: 62px;
+
     @media (max-width: 600px) {
       padding-left: 35px;
       padding-right: 35px;
@@ -37,15 +39,18 @@ $location: #ec1212;
     @media (max-width: 600px) {
       padding: 0;
     }
+
     p {
       text-align: left;
     }
 
     #contacFooter-storeDetail {
       img {
-        width: 100%;
+        width: 35%;
         height: auto;
         border-radius: 50%;
+        display: flex;
+        margin: auto;
       }
 
       h3 {
@@ -100,6 +105,7 @@ $location: #ec1212;
         justify-content: center;
         text-align: center;
       }
+
       a {
         justify-content: center;
       }

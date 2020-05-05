@@ -77,24 +77,24 @@ export default function Footer() {
               <Typography className="text">Siguenos o comunicate con nosotros:</Typography>
               <Container wrap="nowrap">
                 <li>
-                  <Link to='/#' >
+                  <a href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola!!,%20señores%20de%20barriofiel.com%20quiero%20preguntar%20algo.%20Espero%20su%20respuesta,%20gracias." target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <WhatsAppIcon className="ico-whats" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to='/#' >
+                  <a href="https://www.facebook.com/BarrioFielOficial/" target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <FacebookIcon className="ico-faceb" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to='/#' >
+                  <a href="/#" >
                     <ListItemIcon> <TwitterIcon className="ico-twitt" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to='/#' >
+                  <a href="/#" >
                     <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
               </Container>
             </List>
