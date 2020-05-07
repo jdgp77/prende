@@ -77,24 +77,22 @@ export default function Footer() {
               <Typography className="text">Siguenos o comunicate con nosotros:</Typography>
               <Container wrap="nowrap">
                 <li>
-                  <Link to='/#' >
+                  <a href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola!!,%20señores%20de%20barriofiel.com%20quiero%20preguntar%20algo.%20Espero%20su%20respuesta,%20gracias." target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <WhatsAppIcon className="ico-whats" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/Barrio-Fiel-109953560704094/?__tn__=%2Cd%2CP-R&eid=ARAL5lJ5UENVvhZcyNd6VW5qqHjH_CMOP1r6rcKvdAxcsdYJzGtvFHHEu9Uurp15bEdKACCMiXnY6v9d" target="_black" >
+                  <a href="https://www.facebook.com/BarrioFielOficial/" target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <FacebookIcon className="ico-faceb" /> </ListItemIcon>
                   </a>
                 </li>
                 <li>
-                  <Link to='/#' >
+                  <a href="/#" >
                     <ListItemIcon> <TwitterIcon className="ico-twitt" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to='/#' >
-                  </Link>
-                  <a href="https://www.instagram.com/barrio_fiel/" target="_black" >
+                  <a href="https://www.instagram.com/barrio_fiel/" >
                     <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
                   </a>
                 </li>

@@ -58,7 +58,7 @@ export default function TiendaDetalle(props) {
                       <img className={classes.img, 'p-w100'} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
                       <h2>{props.pageContext.title}</h2>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                       <h3>¿Como comprar?</h3>
                       <List >
                         {
