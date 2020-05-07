@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './List.scss';
 import Paper from '@material-ui/core/Paper';
 import ImageElement from '../../../elements/image/ImageElement';
-import { Link } from 'gatsby';
 
 class List extends Component {
   constructor() {
@@ -61,7 +60,6 @@ class List extends Component {
 				ourClass = "list col s12 l" + (12/numCols);
 		}
 
-		console.log('lists', lists);
 		let listItems = lists.map((item, index) => {
 			let url = '';
 			let target = '';
@@ -72,26 +70,21 @@ class List extends Component {
 						target = item.link.target;
 					}
 				}
-				else {
-					url = item.link;
-					target = '_self';
-				}
 			}
-			console.log('lists', lists);
 			
 			var getItemStructure = () => {
 				switch(type) {
 					case 'items':
-						return (<Paper key={index} className="item" elevation={1}>
+						return (<Paper key={index} className="item" elevation={0}>
 								<div className="itemcard items">
-									<Link className="p-image-link" target={target} to={url} >
-										<ImageElement src={item.image ? item.image : ''} alt={item.alt ? item.alt : ''} ></ImageElement>
-									</Link>
+									<a target={target} href={url} >
+										<ImageElement src={item.image ? item.image : ''}></ImageElement>
+									</a>
 									<div className="content">
 										<div className="container">
-											<Link target={target} to={url} >
+											<a target={target} href={url} >
 												<h3 className="p" >{ item.title }</h3>
-											</Link>
+											</a>
 											<div className="paragraph" dangerouslySetInnerHTML={{__html: item.description }}></div>
 										</div>
 									</div>
@@ -121,6 +114,8 @@ class List extends Component {
 								 </div>
 							 </div>
 						 </div>);
+					default:
+						
 				}
 				
 			}

@@ -115,7 +115,7 @@ class BuscarBlock extends Component {
       for (let numberValuesFromItems in valuesFromItems) {
         let valuesFromItem = valuesFromItems[numberValuesFromItems];
         if (valuesFromItem[filterName]) {
-          if (arValueFilters[filterName] == undefined) {
+          if (arValueFilters[filterName] === undefined) {
             arValueFilters[filterName] = [];
             arExistFilters[filterName] = [];
             arValueFilters[filterName]['title'] = this.state.info.filters[numFilters].title;

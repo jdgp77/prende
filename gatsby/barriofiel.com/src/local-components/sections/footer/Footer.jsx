@@ -34,7 +34,7 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root, "section-footer"}>
+    <div className={classes.root,"section-footer"}>
       <Grid className="rowGrid" container direction="row" justify="space-between" alignItems="flex-start" spacing={2}>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"} id="logo">
@@ -82,9 +82,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' >
+                  <a href="https://www.facebook.com/Barrio-Fiel-109953560704094/?__tn__=%2Cd%2CP-R&eid=ARAL5lJ5UENVvhZcyNd6VW5qqHjH_CMOP1r6rcKvdAxcsdYJzGtvFHHEu9Uurp15bEdKACCMiXnY6v9d" target="_black" >
                     <ListItemIcon> <FacebookIcon className="ico-faceb" /> </ListItemIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link to='/#' >
@@ -93,8 +93,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link to='/#' >
-                    <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
                   </Link>
+                  <a href="https://www.instagram.com/barrio_fiel/" target="_black" >
+                    <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
+                  </a>
                 </li>
               </Container>
             </List>

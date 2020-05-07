@@ -1,6 +1,10 @@
 .beforeload {
   background-image: url('/global-images/beforload.png');
   animation: beforeload 5s infinite;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
 }
 @keyframes beforeload {
   0% {background-position-x: 0px;}

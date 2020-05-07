@@ -6,9 +6,6 @@ import Button from '@material-ui/core/Button';
 import TitleElement from '../../elements/title/TitleElement';
 
 class Register extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return <div className="block login" >

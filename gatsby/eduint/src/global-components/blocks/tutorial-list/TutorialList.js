@@ -129,8 +129,7 @@ class TutorialList extends Component {
       }
       lists[numList].data.data = listOfData;
     }
-    
-    let countListItems
+
     let listsHtml = lists.map((list, index) => {
       return <List key={index} type={"card"} info={list.info} data={list.data}></List>
     });
