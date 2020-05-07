@@ -92,7 +92,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/#" >
+                  <a href="https://www.instagram.com/barrio_fiel/" >
                     <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
                   </a>
                 </li>
