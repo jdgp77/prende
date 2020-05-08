@@ -77,7 +77,7 @@ export default function Footer() {
               <Typography className="text">Siguenos o comunicate con nosotros:</Typography>
               <Container wrap="nowrap">
                 <li>
-                  <a href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola!!,%20señores%20de%20barriofiel.com%20quiero%20preguntar%20algo.%20Espero%20su%20respuesta,%20gracias." target="_blank" rel="nofollow noopener" >
+                  <a href="https://api.whatsapp.com/send?phone=573153951726&amp;text=Hola!!,%20señores%20de%20barriofiel.com%20quiero%20preguntar%20algo.%20Espero%20su%20respuesta,%20gracias." target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <WhatsAppIcon className="ico-whats" /> </ListItemIcon>
                   </a>
                 </li>
@@ -87,12 +87,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/#" >
+                  <a href="https://twitter.com/barriofiel/" target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <TwitterIcon className="ico-twitt" /> </ListItemIcon>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/barrio_fiel/" >
+                  <a href="https://www.instagram.com/barrio_fiel/" target="_blank" rel="nofollow noopener" >
                     <ListItemIcon> <InstagramIcon className="ico-instag" /> </ListItemIcon>
                   </a>
                 </li>
