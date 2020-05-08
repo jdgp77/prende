@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import './Header.scss';
-import { Link, graphql, useStaticQuery, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 import Logo from './Logo';
 
 function Header() {
@@ -13,22 +12,10 @@ function Header() {
   function onClickMobileMenu() {
     setShowMobileMenu(!showMobileMenu);
   };
-/*
-  var data = useStaticQuery(graphql`query {
-    dataJson {
-      global {
-        logo {
-          alt
-          path
-        }
-      }
-    }
-  }`)
-  */
   return <Paper elevation={1} >
     <div className="p-header" >
       <div className="p-logo" >
-        <Logo path={data.dataJson.global.logo.path} alt={data.dataJson.global.logo.alt} />
+        <Logo/>
       </div>
       <nav className="p-principal-menu">
         <ul className="p-no-list-style">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './BuscarBlock.scss';
 import TextField from '@material-ui/core/TextField';
 import TutorialList from '../shop-list/ShopList';
-import jGet, { getValuesFromItems } from '../../../global-services/rest/connect';
+import jGet, { getValuesFromItems } from '../../../local-services/rest/connect';
 import SearchIcon from '@material-ui/icons/Search';
 import { getShopImages } from '../../../local-services/rest/shop';
 
@@ -55,7 +55,56 @@ class BuscarBlock extends Component {
         },
       },
       search: '',
-      listCourses: [],
+      listCourses: [{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },{
+          title: "Cargando",
+          description: "Cargando.",
+          body: "",
+          link: "",
+          image: "",
+        },
+      ],
       listTutorials: [],
     };
     

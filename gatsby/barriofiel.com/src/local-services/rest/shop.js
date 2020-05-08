@@ -9,7 +9,7 @@ export const getShopImages = (data, included) => {
     }
     for (let i = 0; i < included.length ; i++) {
       for (let j = 0; j < arImagesId.length ; j++) {
-        if (included[i].id == arImagesId[j]) {
+        if (included[i].id === arImagesId[j]) {
           var inc = included[i];
           if (inc && inc.attributes && inc.attributes.uri && inc.attributes.uri.url) {
             arImages[arImages.length] =  'https://back.barriofiel.jdgp77.com' + inc.attributes.uri.url;
