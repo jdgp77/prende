@@ -39,6 +39,23 @@ const useStyles = makeStyles((theme) => ({
 export default function TiendaDetalle(props) {
   const classes = useStyles();
 
+  function allWhatsapp(numWhatsapp){
+    let numHtmlWhatsapp = [];
+    let numHrefWhatsapp = 'https://api.whatsapp.com/send?phone=57'+ props.pageContext.field_whatsapp + '&text=Hola!%20Me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias.';
+
+    for (let i=0; i<numWhatsapp.length; i++){
+      numHtmlWhatsapp[numHtmlWhatsapp.length] = 
+        <ListItem >
+          <Link className="icon-what" href={numHrefWhatsapp} target="_blank">
+            <WhatsAppIcon />
+            <Typography className="text"><span>WhatsApp:</span> {numWhatsapp[i]} </Typography>
+          </Link>
+        </ListItem>;
+    }
+
+    return numHtmlWhatsapp
+  }
+
   return (
     <Layout>
       <div className={classes.root, "tienda-detalle-page page-shop content"}>
@@ -54,11 +71,11 @@ export default function TiendaDetalle(props) {
 
                 <Grid item xs={12} id="contacFooter-storeDetail">
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={6}>
+                    <Grid item xs={12} sm={6} md={6} style={{display: "none"}}>
                       <img className={classes.img, 'p-w100'} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
                       <h2>{props.pageContext.title}</h2>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={6}>
+                    <Grid item xs={12}>
                       <h3>¿Como comprar?</h3>
                       <List >
                         {
