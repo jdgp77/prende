@@ -68,7 +68,7 @@ function SwipeableTextMobileStepper(props) {
     newTutorialSteps[newTutorialSteps.length] = { label: 'tienda', imgPath: props.data[num] }
   }
   // debugger;
-  if (newTutorialSteps.length == 0) {
+  if (newTutorialSteps.length === 0) {
     newTutorialSteps = tutorialSteps;
   }
   

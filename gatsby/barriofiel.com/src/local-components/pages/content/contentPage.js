@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
 import './contentPage.scss';
 import Layout from "../../layout"
-import { filterTextFormat } from '../../../global-services/rest/connect';
+import { filterTextFormat } from '../../../local-services/rest/connect';
 
 class contentPage extends Component {
   render() {

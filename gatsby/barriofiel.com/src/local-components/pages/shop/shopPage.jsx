@@ -13,7 +13,7 @@ import Link from '@material-ui/core/Link';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { filterTextFormat } from '../../../global-services/rest/connect';
+import { filterTextFormat } from '../../../local-services/rest/connect';
 import Carousel from '../../structure/carousel/Carousel';
 
 const useStyles = makeStyles((theme) => ({
@@ -78,20 +78,26 @@ export default function TiendaDetalle(props) {
                     <Grid item xs={12}>
                       <h3>¿Como comprar?</h3>
                       <List >
-                        <ListItem >
-                          <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
-                            <WhatsAppIcon />
-                            <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
-                          </Link>
-                        </ListItem>
-                        <ListItem >
-                          <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
-                          <Typography className="text"><span>Telefono:</span> {props.pageContext.phone[0]}</Typography>
-                        </ListItem>
-                        <ListItem >
-                          <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
-                          <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
-                        </ListItem>
+                        {
+                          props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
+                            <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
+                              <WhatsAppIcon />
+                              <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
+                            </Link>
+                          </ListItem> : <></>
+                        }
+                        {
+                          props.pageContext.phone[0] !== '' ? <ListItem >
+                            <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
+                            <Typography className="text"><span>Telefono:</span> {props.pageContext.phone[0]}</Typography>
+                          </ListItem> : <></>
+                        }
+                        {
+                          props.pageContext.field_address[0] !== '' ? <ListItem >
+                            <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
+                            <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
+                          </ListItem> : <></>
+                        }
                       </List>
                     </Grid>
                   </Grid>
@@ -106,16 +112,20 @@ export default function TiendaDetalle(props) {
               <h2>{props.pageContext.title}</h2>
               <h3>¿Como comprar?</h3>
               <List>
-                {allWhatsapp(props.pageContext.field_whatsapp)}
-                {/* <ListItem >
-                  <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank"> <WhatsAppIcon />
-                    <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
-                  </Link>
-                </ListItem> */}
-                <ListItem >
-                  <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
-                  <Typography className="text"><span>Telefono:</span>  {props.pageContext.phone[0]}</Typography>
-                </ListItem>
+                {
+                  props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
+                    <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
+                      <WhatsAppIcon />
+                      <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
+                    </Link>
+                  </ListItem> : <></>
+                }
+                {
+                  props.pageContext.phone[0] !== '' ? <ListItem >
+                    <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
+                    <Typography className="text"><span>Telefono:</span> {props.pageContext.phone[0]}</Typography>
+                  </ListItem> : <></>
+                }
               </List>
 
               <h4>Estado:</h4>
@@ -124,10 +134,12 @@ export default function TiendaDetalle(props) {
 
               <h4>Donde esta</h4>
               <List >
-                <ListItem >
-                  <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
-                  <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
-                </ListItem>
+                {
+                  props.pageContext.field_address[0] !== '' ? <ListItem >
+                    <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
+                    <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
+                  </ListItem> : <></>
+                }
               </List>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0312959172525!2d-74.03761428590975!3d4.764545542428943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858b5d851683%3A0x6d0ed51498229ad0!2sCl.%20187%20%2315-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1587535215757!5m2!1ses!2sco" frameBorder="0" aria-hidden="false" title="ubicacion" ></iframe>
             </Paper>

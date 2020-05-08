@@ -34,7 +34,7 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root, "section-footer"}>
+    <div className={classes.root,"section-footer"}>
       <Grid className="rowGrid" container direction="row" justify="space-between" alignItems="flex-start" spacing={2}>
         <Grid item xs={12} sm={6} md={3} className="grid">
           <Paper className={classes.paper, "gridPaper"} id="logo">

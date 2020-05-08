@@ -1,5 +1,4 @@
 import defaultjs from './../default';
-import logger from './../logger/logger';
 
 export var token = '';
 const url_base = 'https://back.educacioninteractiva.com.co';
@@ -51,7 +50,7 @@ export const filterTextFormat = (description) => {
 
 //  Carga el token, debe ser usada antes de cualquier POST
 const jGetToken = () => {
-  if (token != '') {
+  if (token !== '') {
     return token;
   }
   else {
@@ -80,7 +79,6 @@ const jGetToken = () => {
 export const getValuesFromItems = (items, result) => {
   let data = result.data;
   let prevElemeData = '';
-  let prevElemeIncluded = '';
 
   let arValues = [];
   for (let numData in data) {
@@ -127,7 +125,7 @@ export const getValuesFromItems = (items, result) => {
               let itemIncluded = item.included;
               let prevElemeIncluded = included[numIncluded];
               let withFilter = [];
-              if (prevElemeIncluded.id == dataRelation.id && prevElemeIncluded.type == dataRelation.type) {
+              if (prevElemeIncluded.id === dataRelation.id && prevElemeIncluded.type === dataRelation.type) {
                 // Pasa por cada campo de itemData hasta obtener
                 // el valor del item
                 for (let numField in itemIncluded) {
@@ -145,9 +143,9 @@ export const getValuesFromItems = (items, result) => {
                   }
                 }
                 
-                if (typeof prevElemeIncluded == 'string' || typeof prevElemeIncluded == 'number') {
+                if (typeof prevElemeIncluded === 'string' || typeof prevElemeIncluded === 'number') {
                   // Si es mas de uno lo guarda como arreglo
-                  if (arValues[numData][nameField] == '') {
+                  if (arValues[numData][nameField] === '') {
                     arValues[numData][nameField] = prevElemeIncluded;
                   }
                   else {
@@ -155,7 +153,7 @@ export const getValuesFromItems = (items, result) => {
                       arValues[numData][nameField] = [arValues[numData][nameField]];
                     }
                     for (let i = 0; i < withFilter.length; i++) {
-                      if (withFilter[i] == 'FilterTextToLocalFormat') {
+                      if (withFilter[i] === 'FilterTextToLocalFormat') {
                         prevElemeIncluded = filterTextFormat('jaja');
                       }
                     }
@@ -168,7 +166,7 @@ export const getValuesFromItems = (items, result) => {
         }
       }
       
-      if (typeof prevElemeData == 'string' || typeof prevElemeData == 'number') {
+      if (typeof prevElemeData === 'string' || typeof prevElemeData === 'number') {
         arValues[numData][nameField] = prevElemeData;
       }
       bnFirstTimeInForIntems = false;
