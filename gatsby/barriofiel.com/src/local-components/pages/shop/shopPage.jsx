@@ -36,34 +36,64 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function allWhatsapp(arWhatsapp) {
-  let arHtmlWhatsapp = [];
-  for (let i=0; i<arWhatsapp.length; i++) {
-    let numWhatsapp = arWhatsapp[i];
-    
-    arHtmlWhatsapp[arHtmlWhatsapp.length] = <div>{numWhatsapp}</div>
-  }
-  return arHtmlWhatsapp;
-}
-
 export default function TiendaDetalle(props) {
   const classes = useStyles();
 
   function allWhatsapp(numWhatsapp){
     let numHtmlWhatsapp = [];
-    let numHrefWhatsapp = 'https://api.whatsapp.com/send?phone=57'+ props.pageContext.field_whatsapp + '&text=Hola!%20Me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias.';
+    let numHrefWhatsapp = 'https://api.whatsapp.com/send?phone=57'+ props.pageContext.field_whatsapp + '&text=¡Hola!!,%20Te%20vimos%20en%20BarrioFiel.com,%20estamos%20interesados%20en%20tus%20productos.';
+
+    if (numWhatsapp.length == 1 && numWhatsapp[0] == "") {
+      return <></>;
+    }
 
     for (let i=0; i<numWhatsapp.length; i++){
       numHtmlWhatsapp[numHtmlWhatsapp.length] = 
         <ListItem >
-          <Link className="icon-what" href={numHrefWhatsapp} target="_blank">
+          <Link className="icon-what" href={numHrefWhatsapp} target="_blank" >
             <WhatsAppIcon />
-            <Typography className="text"><span>WhatsApp:</span> {numWhatsapp[i]} </Typography>
+            <Typography className="text"><span>WhatsApp:&nbsp;</span> {numWhatsapp[i]} </Typography>
           </Link>
         </ListItem>;
     }
 
     return numHtmlWhatsapp
+  }
+
+  function allPhone(numPhone){
+    let numHtmlPhone = [];
+    
+    if (numPhone.length == 1 && numPhone[0] == "") {
+      return <></>;
+    }
+
+    for (let i=0; i<numPhone.length; i++){
+      numHtmlPhone[numHtmlPhone.length] = 
+        <ListItem >
+          <ListItemIcon className="icon-phone" >
+            <PhoneIcon />
+            <Typography className="text"><span>Telefono:&nbsp;</span> {numPhone[i]} </Typography>
+          </ListItemIcon>
+        </ListItem>;
+    }
+
+    return numHtmlPhone
+  }
+
+  function allAddress(numAddress){
+    let numHtmlAddress = [];
+
+    for (let i=0; i<numAddress.length; i++){
+      numHtmlAddress[numHtmlAddress.length] = 
+        <ListItem >
+          <ListItemIcon className="icon-location" >
+            <LocationOnIcon />
+            <Typography className="text"><span>Tienda:&nbsp;</span> {numAddress[i]} </Typography>
+          </ListItemIcon>
+        </ListItem>;
+    }
+
+    return numHtmlAddress
   }
 
   return (
@@ -88,28 +118,9 @@ export default function TiendaDetalle(props) {
                     <Grid item xs={12}>
                       <h3>¿Como comprar?</h3>
                       <List >
-                        {
-                          props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
-                            <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
-                              <WhatsAppIcon />
-                              <Typography className="text"><span>WhatsApp:</span>{
-                                props.pageContext.field_whatsapp[0]
-                              }</Typography>
-                            </Link>
-                          </ListItem> : <></>
-                        }
-                        {
-                          props.pageContext.phone[0] !== '' ? <ListItem >
-                            <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
-                            <Typography className="text"><span>Telefono:</span> {props.pageContext.phone[0]}</Typography>
-                          </ListItem> : <></>
-                        }
-                        {
-                          props.pageContext.field_address[0] !== '' ? <ListItem >
-                            <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
-                            <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
-                          </ListItem> : <></>
-                        }
+                        {allWhatsapp(props.pageContext.field_whatsapp)}
+                        {allPhone(props.pageContext.phone)}
+                        {allAddress(props.pageContext.field_address)}
                       </List>
                     </Grid>
                   </Grid>
@@ -122,32 +133,20 @@ export default function TiendaDetalle(props) {
               <h2>{props.pageContext.title}</h2>
               <h3>¿Como comprar?</h3>
               <List>
-                {
-                  props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
-                    <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
-                      <WhatsAppIcon />
-                      <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
-                    </Link>
-                  </ListItem> : <></>
-                }
-                {
-                  props.pageContext.phone[0] !== '' ? <ListItem >
-                    <ListItemIcon className="icon-phone"> <PhoneIcon /> </ListItemIcon>
-                    <Typography className="text"><span>Telefono:</span> {props.pageContext.phone[0]}</Typography>
-                  </ListItem> : <></>
-                }
+                {allWhatsapp(props.pageContext.field_whatsapp)}
+                {allPhone(props.pageContext.phone)}
               </List>
 
               <h4>Donde esta</h4>
               <List >
-                {
-                  props.pageContext.field_address[0] !== '' ? <ListItem >
-                    <ListItemIcon className="icon-location"> <LocationOnIcon /> </ListItemIcon>
-                    <Typography className="text"><span>Tienda:</span> {props.pageContext.field_address[0]}</Typography>
-                  </ListItem> : <></>
-                }
+                {allAddress(props.pageContext.field_address)}
               </List>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0312959172525!2d-74.03761428590975!3d4.764545542428943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858b5d851683%3A0x6d0ed51498229ad0!2sCl.%20187%20%2315-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1587535215757!5m2!1ses!2sco" frameBorder="0" aria-hidden="false" title="ubicacion" ></iframe>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0312959172525!2d-74.03761428590975!3d4.764545542428943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858b5d851683%3A0x6d0ed51498229ad0!2sCl.%20187%20%2315-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1587535215757!5m2!1ses!2sco" 
+                frameBorder="0" 
+                aria-hidden="false" 
+                title="ubicacion" >
+              </iframe>
             </Paper>
           </Grid>
         </Grid>
