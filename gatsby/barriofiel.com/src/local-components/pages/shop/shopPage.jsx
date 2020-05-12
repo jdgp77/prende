@@ -41,7 +41,7 @@ export default function TiendaDetalle(props) {
 
   function allWhatsapp(numWhatsapp){
     let numHtmlWhatsapp = [];
-    let numHrefWhatsapp = 'https://api.whatsapp.com/send?phone=57'+ props.pageContext.field_whatsapp + '&text=Hola!%20Me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias.';
+    let numHrefWhatsapp = 'https://api.whatsapp.com/send?phone=57'+ props.pageContext.field_whatsapp + '&text=Hola!%20Me%20gustaría%20saber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias.';
 
     for (let i=0; i<numWhatsapp.length; i++){
       numHtmlWhatsapp[numHtmlWhatsapp.length] = 
@@ -78,9 +78,11 @@ export default function TiendaDetalle(props) {
                     <Grid item xs={12}>
                       <h3>¿Como comprar?</h3>
                       <List >
+                        {allWhatsapp(props.pageContext.field_whatsapp)}
+                        
                         {
                           props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
-                            <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
+                            <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaría%20saber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
                               <WhatsAppIcon />
                               <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
                             </Link>
@@ -112,9 +114,11 @@ export default function TiendaDetalle(props) {
               <h2>{props.pageContext.title}</h2>
               <h3>¿Como comprar?</h3>
               <List>
+                {allWhatsapp(props.pageContext.field_whatsapp)}
+
                 {
                   props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
-                    <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaria%20daber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
+                    <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaría%20saber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
                       <WhatsAppIcon />
                       <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
                     </Link>
