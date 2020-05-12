@@ -70,6 +70,9 @@ class List extends Component {
 						target = item.link.target;
 					}
 				}
+				else {
+					url = item.link;
+				}
 			}
 			
 			var getItemStructure = () => {

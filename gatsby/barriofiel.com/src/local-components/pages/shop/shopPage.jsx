@@ -36,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function allWhatsapp(arWhatsapp) {
+  let arHtmlWhatsapp = [];
+  for (let i=0; i<arWhatsapp.length; i++) {
+    let numWhatsapp = arWhatsapp[i];
+    
+    arHtmlWhatsapp[arHtmlWhatsapp.length] = <div>{numWhatsapp}</div>
+  }
+  return arHtmlWhatsapp;
+}
+
 export default function TiendaDetalle(props) {
   const classes = useStyles();
 
@@ -84,7 +94,9 @@ export default function TiendaDetalle(props) {
                           props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
                             <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaría%20saber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
                               <WhatsAppIcon />
-                              <Typography className="text"><span>WhatsApp:</span> {props.pageContext.field_whatsapp[0]}</Typography>
+                              <Typography className="text"><span>WhatsApp:</span>{
+                                props.pageContext.field_whatsapp[0]
+                              }</Typography>
                             </Link>
                           </ListItem> : <></>
                         }
@@ -107,15 +119,11 @@ export default function TiendaDetalle(props) {
               </Grid>
             </Paper>
           </Grid>
-
           <Grid item xs={12} sm={4} md={4} id="contac-detalleTienda">
             <Paper className={classes.paper} id="conten">
-              <img className={classes.img, 'p-w100'} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" />
               <h2>{props.pageContext.title}</h2>
               <h3>¿Como comprar?</h3>
               <List>
-                {allWhatsapp(props.pageContext.field_whatsapp)}
-
                 {
                   props.pageContext.field_whatsapp[0] !== '' ? <ListItem >
                     <Link className="icon-what" href="https://api.whatsapp.com/send?phone=573015407389&amp;text=Hola,%20me%20gustaría%20saber%20si%20tienes%20domicilio.%20Espero%20su%20respuesta,%20gracias." target="_blank">
@@ -131,10 +139,6 @@ export default function TiendaDetalle(props) {
                   </ListItem> : <></>
                 }
               </List>
-
-              <h4>Estado:</h4>
-              <p className="contenido"><b>VENTA SOLO PORDOMICILIO</b></p>
-              <p className="contenido"><span>Apoyalos,</span> esta el local y solo el local esta cerrado por la cuarentena, pero ellos <b>siguen trabajando en sus casas.</b></p>
 
               <h4>Donde esta</h4>
               <List >
