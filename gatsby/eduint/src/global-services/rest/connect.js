@@ -44,6 +44,39 @@ const jGet = info => {
   });
 }
 
+//  Json post
+export const jPost = (info) => {
+  info = defaultjs.defaultJson(info, {
+    url: '',
+    data: {},
+    then: () => {},
+    err: () => {},
+    async: true,
+  });
+
+  jGetToken();
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  
+  fetch(`${url_base}${info.url}`, {
+    method: 'POST',
+    body: JSON.stringify(info.data),
+    headers: {
+      'Content-Type': 'application/json'
+      'X-CSRF-Token': token,
+    }
+  })
+  .then(function(result) {
+    return result.json();
+  })
+  .then(function(result) {
+    info.then(result)
+  }).catch(function(err){
+    info.err(err)
+  });
+}
+
 export const filterTextFormat = (description) => {
 	return description = description.split('src="/sites/').join('src="' + url_base + '/sites/')
 }

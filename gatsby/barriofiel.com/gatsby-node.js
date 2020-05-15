@@ -72,7 +72,8 @@ exports.createPages = async ({ actions, graphql }) => {
           field_description: (attributes.field_description ? (attributes.field_description.value ? attributes.field_description.value : '') : ''),
           phone: (attributes.phone ? attributes.phone : ['']),
           field_address: (attributes.field_address ? attributes.field_address : ['']),
-          field_whatsapp: (attributes.field_whatsapp ? attributes.field_whatsapp : [''])
+          field_whatsapp: (attributes.field_whatsapp ? attributes.field_whatsapp : ['']),
+          field_location: (attributes.field_location ? attributes.field_location : [])
         },
       })
     }

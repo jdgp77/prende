@@ -43,7 +43,13 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-165014929-1",
       },
-    }
+    },{
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: `AIzaSyCr3hPOrV0OFnTZqHmZvthcKhCrY9YPqls`,
+        center: `4.7642646,-74.0370154`,
+      },
+    },
       /*
     {
       resolve: `gatsby-source-contenta`,

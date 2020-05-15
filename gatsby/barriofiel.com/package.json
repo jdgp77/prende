@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "@react-google-maps/api": "^1.9.0",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-google-analytics": "^2.3.0",
@@ -18,6 +19,7 @@
     "gatsby-source-contenta": "^1.0.1",
     "gatsby-source-drupal": "^3.4.2",
     "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-source-googlemaps-static": "^1.1.1",
     "gatsby-source-graphql": "^2.3.0",
     "gatsby-transformer-json": "^2.3.2",
     "gatsby-transformer-sharp": "^2.3.19",
