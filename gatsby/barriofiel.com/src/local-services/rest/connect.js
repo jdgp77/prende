@@ -58,23 +58,23 @@ export const jPost = (info) => {
 
   var xhr = new XMLHttpRequest();
   xhr.withCredentials = true;
-  
-  fetch(`${url_base}${info.url}`, {
-    method: 'POST',
-    body: JSON.stringify(info.data),
-    headers: {
-      'Content-Type': 'application/json'
-      'X-CSRF-Token': token,
+
+  xhr.addEventListener("readystatechange", function() {
+    if (this.readyState === 4) {
+      if (this.status == 200) {
+        info.then((defaultjs.isJson(this.response)?JSON.parse(this.response):this.response));
+      }
+      else {
+        info.err(this);
+      }
     }
-  })
-  .then(function(result) {
-    return result.json();
-  })
-  .then(function(result) {
-    info.then(result)
-  }).catch(function(err){
-    info.err(err)
   });
+
+  xhr.open("POST", `${url_base}${info.url}`, info.async);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.withCredentials = false;
+  xhr.setRequestHeader("X-CSRF-Token", token);
+  xhr.send(info.data);
 }
 
 export const filterTextFormat = (description) => {
