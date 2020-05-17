@@ -4,6 +4,7 @@ import Layout from "../local-components/layout"
 import { Component } from "react"
 import ImgContent from "../local-components/blocks/img-content/ImgContent"
 import BuscarBlock from "../local-components/blocks/buscar/BuscarBlock";
+import Top from "../local-components/sections/top/Top";
 
 
 class IndexPage extends Component {
@@ -26,6 +27,7 @@ class IndexPage extends Component {
 
   render() {
     return <Layout>
+        <Top/>
         <BuscarBlock></BuscarBlock>
         <div className="section profesional" >
           {/* <div className="section principal-sidebar" ></div> */}

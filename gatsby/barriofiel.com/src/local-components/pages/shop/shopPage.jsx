@@ -15,6 +15,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { filterTextFormat } from '../../../local-services/rest/connect';
 import Carousel from '../../structure/carousel/Carousel';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TiendaDetalle(props) {
+function TiendaDetalle(props) {
   const classes = useStyles();
 
   function allWhatsapp(numWhatsapp){
@@ -48,8 +49,7 @@ export default function TiendaDetalle(props) {
     }
 
     for (let i=0; i<numWhatsapp.length; i++){
-      numHtmlWhatsapp[numHtmlWhatsapp.length] = 
-        <ListItem >
+      numHtmlWhatsapp[numHtmlWhatsapp.length] = <ListItem key={i} >
           <Link className="icon-what" href={numHrefWhatsapp} target="_blank" >
             <WhatsAppIcon />
             <Typography className="text"><span>WhatsApp:&nbsp;</span> {numWhatsapp[i]} </Typography>
@@ -62,14 +62,13 @@ export default function TiendaDetalle(props) {
 
   function allPhone(numPhone){
     let numHtmlPhone = [];
-    
+
     if (numPhone.length == 1 && numPhone[0] == "") {
       return <></>;
     }
 
     for (let i=0; i<numPhone.length; i++){
-      numHtmlPhone[numHtmlPhone.length] = 
-        <ListItem >
+      numHtmlPhone[numHtmlPhone.length] = <ListItem key={i}>
           <ListItemIcon className="icon-phone" >
             <PhoneIcon />
             <Typography className="text"><span>Telefono:&nbsp;</span> {numPhone[i]} </Typography>
@@ -83,9 +82,8 @@ export default function TiendaDetalle(props) {
   function allAddress(numAddress){
     let numHtmlAddress = [];
 
-    for (let i=0; i<numAddress.length; i++){
-      numHtmlAddress[numHtmlAddress.length] = 
-        <ListItem >
+    for (let i=0; i<numAddress.length; i++) {
+      numHtmlAddress[numHtmlAddress.length] = <ListItem key={i}>
           <ListItemIcon className="icon-location" >
             <LocationOnIcon />
             <Typography className="text"><span>Tienda:&nbsp;</span> {numAddress[i]} </Typography>
@@ -94,6 +92,10 @@ export default function TiendaDetalle(props) {
     }
 
     return numHtmlAddress
+  }
+  
+  function onMarkerClick() {
+    
   }
 
   return (
@@ -119,7 +121,7 @@ export default function TiendaDetalle(props) {
                       <h3>¿Como comprar?</h3>
                       <List >
                         {allWhatsapp(props.pageContext.field_whatsapp)}
-                        {allPhone(props.pageContext.phone)}
+                        {allPhone(props.pageContext.field_phone)}
                         {allAddress(props.pageContext.field_address)}
                       </List>
                     </Grid>
@@ -134,19 +136,13 @@ export default function TiendaDetalle(props) {
               <h3>¿Como comprar?</h3>
               <List>
                 {allWhatsapp(props.pageContext.field_whatsapp)}
-                {allPhone(props.pageContext.phone)}
+                {allPhone(props.pageContext.field_phone)}
               </List>
 
               <h4>Donde esta</h4>
               <List >
                 {allAddress(props.pageContext.field_address)}
               </List>
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0312959172525!2d-74.03761428590975!3d4.764545542428943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858b5d851683%3A0x6d0ed51498229ad0!2sCl.%20187%20%2315-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1587535215757!5m2!1ses!2sco" 
-                frameBorder="0" 
-                aria-hidden="false" 
-                title="ubicacion" >
-              </iframe>
             </Paper>
           </Grid>
         </Grid>
@@ -154,3 +150,7 @@ export default function TiendaDetalle(props) {
     </Layout>
   );
 }
+
+export default GoogleApiWrapper({
+  apiKey: ('AIzaSyCr3hPOrV0OFnTZqHmZvthcKhCrY9YPqls')
+})(TiendaDetalle)

@@ -63,8 +63,8 @@ export const jPost = (info) => {
     method: 'POST',
     body: JSON.stringify(info.data),
     headers: {
-      'Content-Type': 'application/json'
-      'X-CSRF-Token': token,
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': token
     }
   })
   .then(function(result) {

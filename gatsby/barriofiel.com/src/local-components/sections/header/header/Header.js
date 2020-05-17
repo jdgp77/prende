@@ -22,6 +22,7 @@ function Header() {
         <ul className="p-no-list-style">
           <li><Link to='/' >Inicio</Link></li>
           <li><Link to='/buscar' >Buscar</Link></li>
+          <li><Link to='/eventos' >Eventos</Link></li>
           <li><Link to='/quienes-somos' >Quienes somos</Link></li>
         </ul>
       </nav>
@@ -34,6 +35,7 @@ function Header() {
             <ul className="p-no-list-style">
               <li><Link to='/' >Inicio</Link></li>
               <li><Link to='/buscar' >Buscar</Link></li>
+              <li><Link to='/eventos' >Eventos</Link></li>
               <li><Link to='/quienes-somos' >Quienes somos</Link></li>
             </ul>
           </nav>

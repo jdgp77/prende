@@ -62,19 +62,11 @@ export const jPost = (info) => {
   fetch(`${url_base}${info.url}`, {
     method: 'POST',
     body: JSON.stringify(info.data),
-    headers: {
-      'Content-Type': 'application/json'
-      'X-CSRF-Token': token,
+    headers:{
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': token
     }
-  })
-  .then(function(result) {
-    return result.json();
-  })
-  .then(function(result) {
-    info.then(result)
-  }).catch(function(err){
-    info.err(err)
-  });
+  }).then(res => res.json());
 }
 
 export const filterTextFormat = (description) => {
