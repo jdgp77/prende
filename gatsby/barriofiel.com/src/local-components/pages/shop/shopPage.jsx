@@ -15,7 +15,6 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { filterTextFormat } from '../../../local-services/rest/connect';
 import Carousel from '../../structure/carousel/Carousel';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -151,6 +150,4 @@ function TiendaDetalle(props) {
   );
 }
 
-export default GoogleApiWrapper({
-  apiKey: ('AIzaSyCr3hPOrV0OFnTZqHmZvthcKhCrY9YPqls')
-})(TiendaDetalle)
+export default TiendaDetalle;

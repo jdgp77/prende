@@ -1,0 +1,9 @@
+{
+  "global": {
+    "logo": {
+      "path": "global-images/Logo.png",
+      "alt": "Logo oficial, Educación Interactiva"
+    },
+    "derechos": "Creado por Educación Interactiva G.D."
+  }
+} 
