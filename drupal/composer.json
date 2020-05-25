@@ -29,7 +29,9 @@
     "drupal/core-recommended": "^8.8",
     "drupal/smtp": "^1.0",
     "drupal/graphql": "^3.0",
-    "drupal/simple_oauth": "^4.4"
+    "drupal/simple_oauth": "^4.4",
+    "drupal/google_map_field": "^1.5",
+    "drupal/simple_gmap": "^2.0"
   },
   "require-dev": {
     "drupal/console": "^1.0.2",
