@@ -2,12 +2,17 @@ $whatsapp: #12af0a;
 $phone: #2b0aaf;
 $location: #ec1212;
 
+main {
+  margin: 85px auto 0 !important;
+}
+
 .tienda-detalle {
   padding-bottom: 50px;
 
   #contec-detalleTienda {
     img {
-      height: 250px;
+      //height: 250px;
+      // max-height: 100%;
     }
 
     p {

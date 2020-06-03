@@ -48,7 +48,6 @@ export default function TiendaDetalle() {
               <Grid item xs={12}>
                 <h1>Tienda de Don Pepe</h1>
                 <Carousel/>
-                {/* <img className={classes.image} alt="complex" src="https://i.pinimg.com/originals/89/34/fe/8934fe9034e62c3f9ef4f02eea2c56ab.png" /> */}
 
                 <Container >
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu tellus dictum, bibendum ante in, efficitur lectus. Quisque ac sem at arcu dictum hendrerit. Donec eget velit lectus. Fusce pellentesque luctus nulla. Proin imperdiet, turpis ac volutpat luctus, felis arcu congue diam, ut sollicitudin neque enim non purus. Curabitur vestibulum tristique dignissim. Nullam vitae molestie nibh, at dignissim enim. Sed faucibus ante ac turpis posuere viverra. Donec at metus nec augue rutrum imperdiet vitae sed diam.</p>

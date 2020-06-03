@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    paddingTop: '15px',
+    paddingBottom: '15px',
   },
   img: {
     display: 'block',
